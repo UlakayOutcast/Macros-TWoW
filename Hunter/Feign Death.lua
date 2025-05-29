@@ -1,0 +1,1 @@
+/script local x;for x=1,99 do if GetPetActionInfo(x)=="PET_ACTION_FOLLOW"then CastPetAction(x);end;end;CastSpellByName("Feign Death");

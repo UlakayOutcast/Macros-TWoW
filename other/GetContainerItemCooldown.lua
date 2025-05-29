@@ -1,0 +1,1 @@
+/script local startTime, duration, isEnabled = GetInventoryItemDurability("player",16) print(startTime)print(duration)print(isEnabled)

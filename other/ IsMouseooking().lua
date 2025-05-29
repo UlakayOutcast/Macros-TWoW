@@ -1,0 +1,1 @@
+/run if IsMouseooking() then MouselookStop() else MouselookStart() end 

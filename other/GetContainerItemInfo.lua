@@ -1,0 +1,1 @@
+/script local tex,iCo,loc,qua,rea=GetContainerItemInfo(0,1)if tex then print("texture:"..tex)end;if iCo then print("itemCount:"..iCo)end;if loc then print("locked:"..loc)end;if qua then print("quality:"..qua)end;if rea then print("readable:"..rea)end;

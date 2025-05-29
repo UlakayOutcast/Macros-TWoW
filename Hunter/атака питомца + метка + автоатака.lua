@@ -1,0 +1,1 @@
+/script PetAttack("target");CastSpellByName("Hunter's Mark");CastSpellByName("Attack");

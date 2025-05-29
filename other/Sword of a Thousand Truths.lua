@@ -1,0 +1,1 @@
+/script if GetItemCooldown("Sword of a Thousand Truths")==0 then UseItemByName("Sword of a Thousand Truths", "player")end;

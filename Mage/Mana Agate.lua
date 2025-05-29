@@ -1,0 +1,1 @@
+/script if not UseItemByName("Mana Agate") then CastSpellByName("Conjure Mana Agate");end;

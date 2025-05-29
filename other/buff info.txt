@@ -1,0 +1,33 @@
+/script local ix,tex,cnt,zxc,vbn;for ix = 1,32 do tex,cnt,zxc,vbn = UnitBuff("player",ix);if not tex then ix=32;else DEFAULT_CHAT_FRAME:AddMessage("PBuff : "..ix.." | "..tex.." | "..cnt)end;end;for ix = 1,32 do tex,cnt,zxc,vbn = UnitDebuff("player",ix);if not tex then ix=32;else DEFAULT_CHAT_FRAME:AddMessage("PDeBuff : "..ix.." | "..tex.." | "..cnt)end;end;if UnitExists("target") then for ix = 1,32 do tex,cnt,zxc,vbn = UnitBuff("target",ix);if not tex then ix=32;else DEFAULT_CHAT_FRAME:AddMessage("TBuff : "..ix.." | "..tex.." | "..cnt)end;end;for ix = 1,32 do tex,cnt,zxc,vbn = UnitDebuff("target",ix);if not tex then ix=32;else DEFAULT_CHAT_FRAME:AddMessage("TDeBuff : "..ix.." | "..tex.." | "..cnt)end;end;end;
+
+/script local ix,tex,cnt,zxc,vbn;
+for ix = 1,32 do 
+	tex,cnt,zxc,vbn = UnitBuff("player",ix);
+	if not tex then ix=32;
+	else 
+		DEFAULT_CHAT_FRAME:AddMessage("PBuff : "..ix.." | "..tex.." | "..cnt)
+	end;
+end;
+for ix = 1,32 do 
+	tex,cnt,zxc,vbn = UnitDebuff("player",ix);
+	if not tex then ix=32;
+	else 
+		DEFAULT_CHAT_FRAME:AddMessage("PDeBuff : "..ix.." | "..tex.." | "..cnt)
+	end;
+end;
+if UnitExists("target") then 
+	for ix = 1,32 do 
+		tex,cnt,zxc,vbn = UnitBuff("target",ix);
+		if not tex then ix=32;
+		else 
+			DEFAULT_CHAT_FRAME:AddMessage("TBuff : "..ix.." | "..tex.." | "..cnt)
+		end;
+	end;
+	for ix = 1,32 do 
+		tex,cnt,zxc,vbn = UnitDebuff("target",ix);
+		if not tex then ix=32;
+		else 
+			DEFAULT_CHAT_FRAME:AddMessage("TDeBuff : "..ix.." | "..tex.." | "..cnt)
+		end;
+	end;
+end;
