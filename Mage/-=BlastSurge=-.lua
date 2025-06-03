@@ -16,6 +16,7 @@ if s1 or s2 then
 end;
 
 -=-
+Для правильной работы необходим аддон Trivia https://github.com/UlakayOutcast/Trivia
 
 /script local ix,sw;for ix=1,99 do if GetSpellName(ix,1)=="Arcane Surge"then if GetSpellCooldown(ix,1)==0 then if BlastSurge()>0 then sw=1;end;end;if sw==nil then CastSpellByName("Fire Blast")else CastSpellByName("Arcane Surge")end;break;end;end;
 
