@@ -4,15 +4,15 @@
 Необходимо что бы "Attack" была на любой панели.
 -=-
 Attack > Crusader Strike
-/script local X;for X=1,192 do if IsAttackAction(X)then if not IsCurrentAction(X)then UseAction(X)else X=1;while(GetSpellName(X,1)~=(nil or"Crusader Strike"))do X=X+1;end;if GetSpellCooldown(X,1)==0 then CastSpellByName("Crusader Strike")end;end;break;end;end
+/script local CS,X="Crusader Strike";for X=1,192 do if IsAttackAction(X)then if not IsCurrentAction(X)then UseAction(X)else X=1;while(GetSpellName(X,1)~=(nil or CS))do X=X+1;end;if GetSpellCooldown(X,1)==0 then CastSpellByName(CS)end;end;break;end;end
 --
-/script local X;
+/script local CS,X="Crusader Strike";
 for X=1,192 do 
 	if IsAttackAction(X)then 
 		if not IsCurrentAction(X)then 
 			UseAction(X)
 		else 
-			X=1;while(GetSpellName(X,1)~=(nil or"Crusader Strike"))do X=X+1;end;if GetSpellCooldown(X,1)==0 then CastSpellByName("Crusader Strike")end;
+			X=1;while(GetSpellName(X,1)~=(nil or CS))do X=X+1;end;if GetSpellCooldown(X,1)==0 then CastSpellByName(CS)end;
 		end;
 		break;
 	end;
