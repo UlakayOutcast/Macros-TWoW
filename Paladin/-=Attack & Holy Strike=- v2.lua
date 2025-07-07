@@ -1,4 +1,39 @@
--=Attack & Holy Strike=- SuperMacro  v2
+-=Attack & Holy Strike=- 
+Автоатака и Holy Strike на 1 кнопку.
+Для стандартных макросов. С проверкой перезарядки.
+Необходимо что бы "Attack" была на любой панели.
+-=-
+Attack > Holy Strike
+/script local X;for X=1,192 do if IsAttackAction(X)then if not IsCurrentAction(X)then UseAction(X)else X=1;while(GetSpellName(X,1)~=(nil or"Holy Strike"))do X=X+1;end;if GetSpellCooldown(X,1)==0 then CastSpellByName("Holy Strike")end;end;break;end;end
+--
+/script local X;
+for X=1,192 do 
+	if IsAttackAction(X)then 
+		if not IsCurrentAction(X)then 
+			UseAction(X)
+		else 
+			X=1;while(GetSpellName(X,1)~=(nil or"Holy Strike"))do X=X+1;end;if GetSpellCooldown(X,1)==0 then CastSpellByName("Holy Strike")end;
+		end;
+		break;
+	end;
+end
+
+-=-
+Holy Strike > Attack
+/script local X=1;while(GetSpellName(X,1)~=(nil or"Holy Strike"))do X=X+1;end;if GetSpellCooldown(X,1)==0 then CastSpellByName("Holy Strike")else for X=1,192 do if IsAttackAction(X)and not IsCurrentAction(X)then UseAction(X)end;end;end
+--
+/script local X=1;
+while(GetSpellName(X,1)~=(nil or"Holy Strike"))do X=X+1;end;
+if GetSpellCooldown(X,1)==0 then 
+	CastSpellByName("Holy Strike")
+else 
+	for X=1,192 do 
+		if IsAttackAction(X)and not IsCurrentAction(X)then UseAction(X)end;
+	end;
+end
+
+-=-
+SuperMacro
 Автоатака и Holy Strike на 1 кнопку.
 Необходимо что бы "Attack" была на любой панели.
 
@@ -20,33 +55,4 @@ else
 	for C=1,172 do if IsAttackAction(C)then if not IsCurrentAction(C)then UseAction(C);end;end;end;
 end;
 
--=Attack & Holy Strike=- v2
-Для стандартных макросов. С проверкой отката.
-Нужно менять "25" на порядок(место по счёту в книги заклинаний) "Holy Strike". И соответствующий ранг (Rank 2)
-
-/run local C;if GetSpellCooldown(25,"spell")==0 then CastSpellByName("Holy Strike(Rank 2)");else for C=1,172 do if IsAttackAction(C)then if not IsCurrentAction(C)then UseAction(C);end;end;end;end
-
-/run local C;
-if GetSpellCooldown(25,"spell")==0 then 
-	CastSpellByName("Holy Strike(Rank 2)");
-else 
-	for C=1,172 do 
-		if IsAttackAction(C)then 
-			if not IsCurrentAction(C)then UseAction(C);end;
-		end;
-	end;
-end
-
-
--=Attack & Holy Strike=-
-Для стандартных макросов.
-Нужно менять соответствующий ранг (Rank 2)
-
-/run local C;CastSpellByName("Holy Strike(Rank 2)");for C=1,172 do if IsAttackAction(C)then if not IsCurrentAction(C)then UseAction(C);end;end;end;
-
-/run local C;CastSpellByName("Holy Strike(Rank 2)");
-for C=1,172 do 
-	if IsAttackAction(C)then 
-		if not IsCurrentAction(C)then UseAction(C);end;
-	end;
-end;
+-=-
