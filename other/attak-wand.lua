@@ -15,7 +15,7 @@ if not IsCurrentAction(a) then AttackTarget()end;
 if s==0 then CastSpellByName("Shoot")end;
 
 -=AW=-
-/script local x,s,a;for x=1,99 do if IsAttackAction(x)then a=x;end;if GetSpellName(x,"spell")=="Shoot" then s=x;end;end;if not IsCurrentAction(a) then AttackTarget()else if GetSpellCooldown(s,"spell")==0 then CastSpellByName("Shoot","spell")end;end
+/script local x,s,a;for x=1,99 do if IsAttackAction(x)then a=x;end;if GetSpellName(x,"spell")=="Shoot" then s=x;end;end;if not IsCurrentAction(a) then AttackTarget()else if GetSpellCooldown(s,"spell")==0 then CastSpellByName("Shoot")end;end
 
 -=-
 /script local x,s,a;
@@ -26,7 +26,7 @@ end;
 if not IsCurrentAction(a) then AttackTarget()
 else 
 	if GetSpellCooldown(s,"spell")==0 then 
-		CastSpellByName("Shoot","spell")
+		CastSpellByName("Shoot")
 	end;
 end
 
