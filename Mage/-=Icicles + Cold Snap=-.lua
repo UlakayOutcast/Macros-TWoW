@@ -5,7 +5,7 @@
 /script 
 local ix;
 for ix=1,199 do 
-	if GetSpellName(ix,"spell")=="Icicles"then print("0")
+	if GetSpellName(ix,"spell")=="Icicles"then 
 		if GetSpellCooldown(ix,"spell")==0 then CastSpellByName("Icicles"); 
 		else CastSpellByName("Cold Snap");end;
 		break;
