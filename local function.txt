@@ -1,0 +1,30 @@
+local function Act_Spell(spell,rank,sw) 
+	local ix,spellName,spellRank=192;
+	local LT=UnitExists("target");
+	while(ix>0) do 
+		spellName,spellRank=GetSpellName(ix,"spell");
+		if spellName==spell and (spellRank==rank or rank==nil) then 
+			local St,Du=GetSpellCooldown(ix,"spell");
+			if sw==nil and St==0 then 
+				CastSpell(ix,"spell")return ix;
+			end;
+			if sw==0 then 
+				Du=St+Du-GetTime();
+				if Du<=0 then Du=0;end;
+				return Du;
+			end;
+			if sw then 
+				if string.find(sw,"player") or string.find(sw,"target") or string.find(sw,"party") then 
+					TargetUnit(sw);
+				else 
+					TargetUnitByName(sw);
+				end;
+				CastSpell(ix,"spell");
+				if LT then TargetLastTarget()else ClearTarget()end;
+				return ix;
+			end;
+		end;
+		ix=ix-1;
+	end;
+	if sw==0 then return 99;end;
+end;

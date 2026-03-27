@@ -1,0 +1,2 @@
+Проверка на то, что цель цели не игрок.
+/script if not UnitCanAttack("player","target") or UnitHealth("target")==0 then TargetNearestEnemy();end;if not UnitIsUnit("player","targettarget") then CastSpellByName("Growl");end;

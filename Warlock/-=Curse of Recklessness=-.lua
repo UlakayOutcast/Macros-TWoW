@@ -1,0 +1,37 @@
+-=Curse of Recklessness=- На всех 
+/script local function GDebuff(name,target) if not target then target="target" end;local tex,cnt for ix = 1,32 do tex,cnt = UnitDebuff(target,ix) if not tex then return; end;if strfind(tex,name) then return cnt end;end;end;local function Act(spell) local ix,spellName,spellRank=192;while(ix>0) do spellName,spellRank=GetSpellName(ix,"spell");if spellName==spell then if GetSpellCooldown(ix,"spell")==0 then CastSpell(ix,"spell")return ix;end;end;ix=ix-1;end;end;local _,_,_,_,Melediction=GetTalentInfo(1,14);local TH;if UnitExists("target")then TH=UnitHealth("target")/UnitHealthMax("target");else TH=0;end;if not UnitExists("target") or not UnitCanAttack("player","target") or TH==0 then TargetNearestEnemy();end;if UnitAffectingCombat("player") then if UnitAffectingCombat("target") and (not GDebuff("Spell_Shadow_UnholyStrength") or (Melediction and not GDebuff("Spell_Shadow_CurseOfSargeras"))) then if Act("Curse of Recklessness") then return;end;else TargetNearestEnemy();end;else CastSpellByName("Curse of Recklessness");end;
+-=-
+/script 
+local function GDebuff(name,target) 
+	if not target then target="target" end;
+	local tex,cnt 
+	for ix = 1,32 do 
+		tex,cnt = UnitDebuff(target,ix) 
+		if not tex then return; end;
+		if strfind(tex,name) then return cnt end;
+	end;
+end;
+local function Act(spell) 
+	local ix,spellName,spellRank=192;
+	while(ix>0) do 
+		spellName,spellRank=GetSpellName(ix,"spell");
+		if spellName==spell then 
+			if GetSpellCooldown(ix,"spell")==0 then 
+				CastSpell(ix,"spell")return ix;
+			end;
+		end;
+		ix=ix-1;
+	end;
+end;
+local _,_,_,_,Melediction=GetTalentInfo(1,14);
+local TH;if UnitExists("target")then TH=UnitHealth("target")/UnitHealthMax("target");else TH=0;end;
+if not UnitExists("target") or not UnitCanAttack("player","target") or TH==0 then TargetNearestEnemy();end;
+if UnitAffectingCombat("player") then 
+	if UnitAffectingCombat("target") and (not GDebuff("Spell_Shadow_UnholyStrength") or (Melediction and GDebuff("Spell_Shadow_CurseOfSargeras"))) then 
+		if Act("Curse of Recklessness") then return;end;
+	else 
+		TargetNearestEnemy();
+	end;
+else 
+	CastSpellByName("Curse of Recklessness");
+end;

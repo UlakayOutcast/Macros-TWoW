@@ -1,0 +1,1 @@
+/script if SwitchAutoBuff==0 then SwitchAutoBuff=1 else SwitchAutoBuff=0 end

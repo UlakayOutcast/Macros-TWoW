@@ -1,0 +1,2 @@
+/script local asd=pfUI.uf.focus.label; TargetUnit(asd)
+/script local asd=pfUI.uf.focus.unitname; TargetByName(asd)

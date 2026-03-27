@@ -1,0 +1,103 @@
+/script DEFAULT_CHAT_FRAME:AddMessage(math.random(1,2))
+message("text")
+ChatFrame1:AddMessage("afk")
+SendChatMessage("Might 1");SendChatMessage("%n"); -сообшение в чат
+RunBinding("OPENCHAT") - открывает строку ввода (чат)
+math.random()- 
+UnitBuff("target", "Эффект тотема заземления"))
+SpellStopCasting();
+FollowUnit("unit") - Follow an ally with the specified UnitID 
+RunMacroText("/cast Мощный удар")  
+RunScript("script") - Выполнение "скрипта" в виде блока кода Lua.
+DoEmote("raise",target) - Perform a voice emote. 
+CastSpellByName("Flash of Light") простой каст, CastSpellByName("Flash of Light",true) каст на себя
+/script CancelPlayerBuff(1) - отмена баффа
+
+/script local hour,minute = GetGameTime(); DEFAULT_CHAT_FRAME:AddMessage(hour .. ":" .. minute);
+
+/script debugprofilestart();while debugprofilestop()<500 do end; - Где 500 равен 0,5-секундной задержке (250-0,25 сек. , 1000-1 сек, 10000-10 сек и т.д.)
+
+/run ClearTarget();AssistByName("Ulukay");if UnitExists("target") then PetAttack();end
+
+-=-Tent
+/script CastSpellByName("Survival") for r=1,GetNumTradeSkills() do if GetTradeSkillInfo(r) == "Traveler's Tent" then DoTradeSkill(r,1) break end end CloseTradeSkill()
+-=-
+
+-=-Auto Clear AFK - As AFK may be used to let people you don't want to talk with believe you are not available at the moment, it may be useful to make a macro which marks you AFK and keeps you so no matter what you do. To do this, one must access the CVar Auto Clear AFK while adding a simple AFK-commando.
+/run if IsShiftKeyDown()then SetCVar("AutoClearAFK", 1);else SetCVar("AutoClearAFK", 0);end
+/afk
+/run if IsShiftKeyDown()then print("Auto-Clear AFK is now enabled.");else print("Auto-Clear AFK is now disabled.");end
+-=-
+
+time, count = GetFrameCPUUsage(frame[, includeChildren]) - Возвращает общее время, используемое и количество вызовов обработчиков событий кадра.
+seconds = GetTime(); - Возвращает систему простоя компьютера в считанные секунды, с миллисекундной точностью.
+Example:
+print("Current system uptime is: "..seconds.." seconds!");
+> Current system uptime is: 60123.558 seconds!
+tonumber(string.format("%.0f",seconds) = 60123 seconds
+=-=
+
+-=-pockets-=-
+/run if UnitExists("target") then if UnitIsUnit("player","target")~=1 then SendChatMessage("pulled something shiny out of "..UnitName("target").."'s pocket","emote")end else SendChatMessage("rubs his palms, looking at people's pockets","emote")end
+
+/script if UnitExists("target")==nil then SendChatMessage("rubs his palms, looking at people's pockets","emote",nil,nil)else if UnitIsUnit("player","target")~=1 then SendChatMessage("pulled something shiny out of "..UnitName("target").."'s pocket","emote",nil,nil)end if UnitIsUnit("player","target")==1 then SendChatMessage("looking for something in his pocket","emote",nil,nil)end end
+-=-
+
+-=-
+/script PickupContainerItem(4, 1); PickupInventoryItem(1)
+/script UseContainerItem (2,2); PickupInventoryItem (16)
+---
+(берем шлем из первого слота четвертой сумки и надеваем на голову)
+
+-=-
+/script UseContainerItem (2,2); PickupInventoryItem (16)
+---
+(используем яд/заточку из 2 слота 2 сумки на оружие в мейнхенде)
+-=-
+
+
+/run SendChatMessage("Greetings "..UnitClass("target").." ''"..UnitName("target").."'' "..UnitLevel("player").." lvl");
+
+
+/afk
+/script local R=random(0,13);if R==0 then DoEmote("stare",nil);end;if R==2 then DoEmote("blink",nil);end;if R==3 then DoEmote("talkq",nil);end;if R==4 then DoEmote("drool",nil);end;if R==5 then DoEmote("yawn",nil);end;if R==6 then DoEmote("bored",nil);end;if R==7 then DoEmote("bounce",nil);end;if R==8 then DoEmote("smell",nil);end;if R==9 then DoEmote("nosepick",nil);end;if R==10 then DoEmote("crack",nil);end;if R==11 then DoEmote("scratch",nil);end;if R==12 then DoEmote("bite",nil);end;if R==13 then DoEmote("belch",nil);end;
+
+-=????=-
+/script local R=math.random(9);
+if R==0 then DoEmote("stare",nil);end;
+if R==2 then DoEmote("blink",nil);end;
+if R==3 then DoEmote("talkq",nil);end;
+if R==4 then DoEmote("drool",nil);end;
+if R==5 then DoEmote("yawn",nil);end;
+if R==6 then DoEmote("bored",nil);end;
+if R==7 then DoEmote("bounce",nil);end;
+if R==8 then DoEmote("smell",nil);end;
+if R==9 then DoEmote("doh",nil);end;
+
+
+
+
+/script local C=0;local Ta=nil;local HP=10000;local Td="target";
+while(C<10) do TargetNearestEnemy();
+	if UnitExists("target") then 
+		if UnitAffectingCombat("target")==1 then 
+			if UnitIsUnit("player","targettarget") then 
+				Ta="target";
+			else if UnitHealth("target")<HP then 
+				Ta="target";HP=UnitHealth("target");end;
+			end;
+		end;
+	end;
+C=C+1;end;
+if Ta==nil then Ta=Td end;TargetUnit(Ta);PetAttack();TargetUnit(Td);
+
+
+/script 
+SendChatMessage("---*********---","SAY");
+SendChatMessage("--*-----------*--","SAY");
+SendChatMessage("-*--^^--^^--*-","SAY");
+SendChatMessage("*-<@>--<@>-*","SAY");
+SendChatMessage("*------##------*","SAY");
+SendChatMessage("-*--(____)--*-","SAY");
+SendChatMessage("--*-----------*--","SAY");
+SendChatMessage("---*********---","SAY");

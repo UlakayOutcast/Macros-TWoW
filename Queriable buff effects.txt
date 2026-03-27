@@ -1,0 +1,321 @@
+Queriable buff effects
+Edit this page
+Contents
+
+    1 List of known buff and debuff effects that can be queried
+    2 Macro for querying in-game
+    3 Finding rare buff icon names
+
+Note also that ThottBot uses the built-in texture names in its icon paths, e.g. http://thottbot.com/en/Interface/Icons/Spell_Shadow_BloodBoil.jpg for Blood Pact. "Spell_Shadow_BloodBoil" is the in-game texture name. So, if you know the spell, looking at ThottBot will work.
+
+
+
+List of known buff and debuff effects that can be queried
+
+Every time you cast a buff of a debuff on a character, they get an effect added to their list of buffs and debuffs (see HOWTO: Identify Buffs Using Textures for a guide on how to query this information).
+
+Following is a list of spells and associated queriable effects (these are texture names). The initial ones were collected by Pholus and a lot of the initial research into these came from Zorlens Hunter Libraries [1]. Please add more values.
+
+
+This can be useful because it will not require an update when the Rank value changes.
+
+
+Type 	Class 	Spell 	Effect
+Self Buff 	Hunter 	Aspect of the Hawk(Rank X) 	Spell_Nature_RavenForm
+Self Buff 	Hunter 	Aspect of the Monkey 	Ability_Hunter_AspectOfTheMonkey
+Self Buff 	Hunter 	Aspect of the Cheetah 	Ability_Mount_JungleTiger
+Self Buff 	Hunter 	Aspect of the Pack 	Ability_Mount_WhiteTiger
+Self Buff 	Hunter 	Aspect of the Beast 	Ability_Mount_PinkTiger
+Self Buff 	Hunter 	Aspect of the Wild(Rank X) 	Spell_Nature_ProtectionformNature
+Self Buff 	Hunter 	Rapid Fire 	Ability_Hunter_RunningShot
+Self Buff 	Hunter 	Eyes of the Beast 	Ability_EyesOfTheOwl
+Self Buff 	Hunter 	Deterrence 	Ability_Whirlwind
+Self Buff 	Warlock 	Demon Skin/Demon Armor(Rank X) 	Spell_Shadow_RagingScream
+Self Buff 	Warlock 	Fire Shield(Rank X) 	Spell_Fire_FireArmor
+Self Buff 	Warlock 	Sacrifice 	Spell_Shadow_SacrificialShield
+Self Buff 	Warlock 	Underwater Breathing 	Spell_Shadow_DemonBreath
+Self Buff 	Warlock 	Eye of Kilrogg 	Spell_Shadow_EvilEye
+Self Buff 	Warlock 	Nightfall 	Spell_Shadow_Twilight
+Self Buff 	Warlock 	Detect Lesser Invisibility 	Spell_Shadow_DetectLesserInvisibility
+Self Buff 	Warlock 	Demonic Sacrifice 	Spell_Shadow_PsychicScream
+Self Buff 	Warlock 	Shadow Ward 	Spell_Shadow_AntiShadow
+Self Buff 	Warlock 	Master Demonologist 	Spell_Shadow_ShadowPact
+Self Buff 	Warlock 	Detect Invisibility 	Spell_Shadow_DetectInvisibility
+Self Buff 	Warlock 	Soul Link 	Spell_Shadow_GatherShadows
+Self Buff 	Warlock 	Detect Greater Invisibility 	Spell_Shadow_DetectInvisibility
+Self Buff 	Priest 	Shadowform 	Spell_Shadow_Shadowform
+Self Buff 	Priest 	Shadow Protection 	Spell_Shadow_AntiShadow
+Self Buff 	Priest 		Spell_Shadow_DeadofNight
+Self Buff 	Priest 	Power Word: Fortitude 	Spell_Holy_WordFortitude
+Self Buff 	Priest 	Prayer of Fortitude 	Spell_Holy_PrayerOfFortitude
+Self Buff 	Priest 	Divine Spirit 	Spell_Holy_DivineSpirit
+Self Buff 	Priest 	Prayer of Spirit 	Spell_Holy_PrayerofSpirit
+Self Buff 	Priest 	Power Word: Shield 	Spell_Holy_PowerWordShield
+Self Buff 	Priest 	Renew 	Spell_Holy_Renew
+Self Buff 	Priest 	Mind Control 	Spell_Shadow_ShadowWordDominate
+Self Buff 	Priest 	Inner Fire 	Spell_Holy_InnerFire
+Self Buff 	Priest 	Inner Focus 	Spell_Frost_WindWalkOn
+Self Buff 	Priest 	Spirit Tap 	Spell_Shadow_Requiem
+Self Buff 	Priest 		Spell_Magic_LesserInvisibility
+Self Buff 	Priest 		Spell_Shadow_Raisedead
+Self Buff 	Priest 	Vampiric Embrace 	Spell_Shadow_UnsummonBuilding
+Self Buff 	Priest 	Fade 	Spell_Magic_LesserInvisibilty
+Self Buff 	Priest 	Power Infusion 	Spell_Holy_PowerInfusion
+Self Buff 	Priest 	Spirit of Redemption 	Spell_Holy_GreaterHeal
+Self Buff 	Casters 	Zandalarian Hero Charm 	Spell_Lightning_LightningBolt01
+Self Buff 	Priest 	Fear Ward 	Spell_Holy_Excorcism
+Self Buff 	Paladin 	Divine Protection 	Spell_Holy_Restoration
+Self Buff 			Spell_Holy_HolyProtection
+Self Buff 			Spell_Holy_Heal
+Self Buff 			Spell_Holy_BlessingOfAgility
+Self Buff 	Mage 	Arcane Brilliance(Rank X) 	Spell_Holy_ArcaneIntellect
+Self Buff 	Mage 	Arcane Intellect(Rank X) 	Spell_Holy_MagicalSentry
+Self Buff 	Mage 	Ice Armor(Rank X) 	Spell_Frost_FrostArmor02
+Self Buff 	Mage 	Mana Shield(Rank X) 	Spell_Shadow_DetectLesserInvisibility
+Self Buff 	Mage 	Fire Ward(Rank X) 	Spell_Fire_FireArmor
+Self Buff 	Mage 	Ice Block 	Spell_Frost_Frost
+Self Buff 	Mage 	Ice Barrier(Rank X) 	Spell_Ice_Lament
+Self Buff 	Mage 	Frost Ward(Rank X) 	Spell_Frost_FrostWard
+Self Buff 	Mage 	Mage Armor(Rank X) 	Spell_MageArmor
+Self Buff 	Mage 	Clearcasting 	Spell_Shadow_ManaBurn
+Self Buff 	Mage 	Presence of Mind 	Spell_Nature_EnchantArmor
+Self Buff 	Mage 	Combustion 	Spell_Fire_SealOfFire
+Self Buff 		Warchief's Blessing (Segen des Kriegshäuptlings) 	Spell_Arcane_TeleportOrgrimmar
+Self Buff 			Spell_Shadow_RagingScream
+Self Buff 	Warlock 	Soulstone 	Spell_Shadow_SoulGem
+Self Buff 	Mage 	Dampen Magic 	Spell_Nature_AbolishMagic
+Self Buff 	Mage 	Amplify Magic 	Spell_Holy_FlashHeal
+Self Buff 	Druid 	Mark of the Wild/Gift of the Wild(Rank X) 	Spell_Nature_Regeneration
+Self Buff 	Druid 		Spell_Nature_Rejuvenation
+Self Buff 		Nature's Grace 	Spell_Nature_NaturesBlessing
+Self Buff 	Druid 		Spell_Nature_Thorns
+Self Buff 			Spell_Nature_Ravenform
+Self Buff 	Shaman 		Spell_Nature_SpiritWolf
+Self Buff 			Spell_Nature_StoneSkinTotem
+Self Buff 	Warlock 	Summon Felsteed 	Spell_Nature_Swiftness
+Self Buff 			Spell_Nature_P
+Self Buff 			Spell_Nature_ResistNature
+Self Buff 	Troll (Racial) 	Shadowguard 	Spell_Nature_LightningShield
+Self Buff 	Troll (Racial) 	Berserking 	Racial_Troll_Berserk
+Self Buff 	Shaman 	Lightning Shield 	Spell_Nature_LightningShield
+Self Buff 			Spell_Magic_MageArmor
+Self Buff 		Well Fed 	Spell_MiscFood
+Self Buff 			Ability_Mount_BlackDireWolf
+Self Buff 			Ability_Mount_WhiteDireWolf
+Self Buff 			Ability_Mount_Kodo_01
+Self Buff 			Ability_Mount_Kodo_03
+Self Buff 			Ability_Mount_Raptor
+Self Buff 			Ability_Mount_Undeadhorse
+Self Buff 	Warlock 	Summon Dreadsteed 	Ability_Mount_Dreadsteed
+Self Buff 			Ability_Rogue_Sprint
+Self Buff 	Druid 	Cat Form 	Ability_Druid_CatForm
+Self Buff 	Druid 	Bear Form 	Ability_Racial_BearForm
+Self Buff 	Druid 	Dire Bear Form 	Ability_Racial_BearForm
+Self Buff 	Druid 	Prowl 	Ability_Ambush
+Self Buff 	Druid 	Tiger's Fury 	Ability_Mount_JungleTiger
+Self Buff 	Druid 	Dash 	Ability_Druid_Dash
+Self Buff 			Ability_Warrior_DefensiveStance
+Self Buff 			Ability_TrueShot
+Self Buff 		Argent Dawn Commission 	Spell_INV_Jewelry_Talisman_07
+Self Buff 		Gesundheit 	Spell_INV_Potion_44
+Self Buff 		Geringe Stärke 	Spell_INV_Potion_58
+Self Buff 		Geringe Rüstung 	Spell_INV_Potion_65
+Self Buff 		Winterfall Firewater (Feuerwasser) 	Spell_INV_Potion_92
+Self Buff 			Spell_INV_Potion_93
+Self Buff 		Mondbeerensaft 	Spell_INV_Drink_07
+Self Buff 			Spell_INV_Drink_18
+Self Buff 		Essen (Roher Rotkiemen) 	Spell_INV_Misc_Fork&Knife
+Self Buff 	Paladin 	Divine Intervention 	Spell_Nature_TimeStop
+Self Buff 	Paladin 	Divine Shield 	Spell_Holy_DivineIntervention
+Self Buff 	Paladin 	Seal of Command 	Ability_Warrior_InnerRage
+Self Buff 	Paladin 	Seal of Light 	Spell_Holy_HealingAura
+Self Buff 	Paladin 	Seal of Wisdom 	Spell_Holy_RighteousnessAura
+Self Buff 	Paladin 	Seal of the Crusader 	Spell_Holy_HolySmite
+Self Buff 	Paladin 	Seal of Righteousness 	Ability_ThunderBolt
+Self Buff 	Paladin 	Seal of Justice 	Spell_Holy_SealOfWrath
+Self Buff 	Paladin 	Blessing of Might 	Spell_Holy_FistOfJustice
+Self Buff 	Paladin 	Blessing of Wisdom 	Spell_Holy_SealOfWisdom
+Self Buff 	Paladin 	Blessing of Salvation 	Spell_Holy_SealOfSalvation
+Self Buff 	Paladin 	Blessing of Light 	Spell_Holy_PrayerOfHealing02
+Self Buff 	Paladin 	Blessing of Freedom 	Spell_Holy_SealOfValor
+Self Buff 	Paladin 	Blessing of Protection 	Spell_Holy_SealOfProtection
+Self Buff 	Paladin 	Greater Blessing of Might 	Spell_Holy_GreaterBlessingofKings
+Self Buff 	Paladin 	Greater Blessing of Wisdom 	Spell_Holy_GreaterBlessingofWisdom
+Self Buff 	Paladin 	Greater Blessing of Salvation 	Spell_Holy_GreaterBlessingofSalvation
+Self Buff 	Paladin 	Greater Blessing of Light 	Spell_Holy_GreaterBlessingofLight
+Self Buff 	Paladin 	Righteous Fury 	Spell_Holy_SealOfFury
+Self Buff 	Warrior 	Battle Shout 	Ability_Warrior_BattleShout
+Self Buff 	Warrior 	Berserker Rage 	
+
+    _AncestralGuardian
+
+Proc Buff 	Warrior 	Blood Craze 	*_SummonImp
+Self Buff 	Warrior 	Bloodrage 	Ability_Racial_BloodRage
+Proc Buff 	Warrior 	Bloodthirst 	*_BloodLust
+Self Buff 	Warrior 	Death Wish 	*_DeathPact
+Proc Buff 	Warrior 	Enraged 	*_UnholyFrenzy
+Proc Buff 	Warrior 	Flurry 	*_GhoulFrenzy
+Self Buff 	Warrior 	Recklessness 	
+
+    _CriticalStrike
+
+Self Buff 	DeathKnight 	Frost Presence 	Spell_DeathKnight_FrostPresence
+Proc Buff 	Mage 	Netherwind Focus 	Spell_Shadow_Teleport
+Pet Buff 	Hunter 	Feed Pet 	Ability_Hunter_BeastTraining
+Pet Buff 	Hunter 	Mend Pet(Rank X) 	Ability_Hunter_MendPet
+Pet Buff 	Hunter 	Dash(Rank X) 	Ability_Druid_Dash
+Pet Buff 	Hunter 	Prowl(Rank X) 	Ability_Druid_SupriseAttack
+Pet Buff 	Warlock 	Phase Shift 	Spell_Shadow_ImpPhaseShift
+Pet Buff 	Warlock 	Health Funnel 	Spell_Shadow_LifeDrain
+Pet Buff 	Warlock 	Consume Shadows 	Spell_Shadow_AntiShadow
+Pet Buff 	Warlock 	Lesser Invisibility 	Spell_Magic_LesserInvisibility
+Pet Buff 	Warlock 	Soul Link 	Spell_Shadow_GatherShadows
+Aura Buff 	Paladin 	Devotion Aura 	Spell_Holy_DevotionAura
+Aura Buff 	Paladin 	Retribution Aura 	Spell_Holy_AuraOfLight
+Aura Buff 	Paladin 	Concentration Aura 	Spell_Holy_MindSooth
+Aura Buff 	Paladin 	Shadow Resistance Aura 	Spell_Shadow_SealOfKings
+Aura Buff 	Paladin 	Sanctity Aura 	Spell_Holy_MindVision
+Aura Buff 	Paladin 	Frost Resistance Aura 	Spell_Frost_WizardMark
+Aura Buff 	Paladin 	Fire Resistance Aura 	Spell_Fire_SealOfFire
+Aura Buff 	Warlock 	Blood Pact 	Spell_Shadow_BloodBoil
+Aura Buff 	Warlock 	Paranoia 	Spell_Shadow_AuraOfDarkness
+Target Debuff 	Hunter 	Concussive Shot 	Spell_Frost_Stun
+Target Debuff 	Hunter 	Hunter's Mark(Rank X) 	Ability_Hunter_SniperShot
+Target Debuff 	Hunter 	Wing Clip(Rank X) 	Ability_Rogue_Trip
+Target Debuff 	Hunter 	Serpent Sting 	Ability_Hunter_Quickshot
+Target Debuff 	Hunter 	Scorpid Sting 	Ability_Hunter_CriticalShot
+Target Debuff 	Hunter 	Viper Sting 	Ability_Hunter_AimedShot
+Target Debuff 	Hunter 	Scatter Shot 	Ability_GolemStormBolt
+Target Debuff 	Hunter 	Flare 	Ability_GolemStormBolt
+Target Debuff 	Hunter 	Freezing Trap(Rank X) 	Spell_Frost_ChainsOfIce
+Target Debuff 	Hunter 	Frost Trap 	Spell_Frost_FreezingBreath
+Target Debuff 	Hunter 	Immolation Trap(Rank X) 	Spell_Fire_FlameShock
+Target Debuff 	Hunter 	Explosive Trap(Rank X) 	Spell_Fire_SelfDestruct
+Target Debuff 	Mage 	Detect Magic 	Spell_Holy_Dizzy
+Target Debuff 	Mage 	Polymorph 	Spell_Nature_Polymorph
+Target Debuff 	Mage 	Frostbolt 	Spell_Frost_FrostBolt02
+Target Debuff 	Mage 	Frost Nova 	Spell_Frost_FrostNova
+Target Debuff 	Mage 	Frostbite 	Spell_Frost_FrostArmor
+Target Debuff 	Mage 	Scorch 	Spell_Fire_SoulBurn
+Target Debuff 	Warlock 	Corruption(Rank X) 	Spell_Shadow_AbominationExplosion
+Target Debuff 	Warlock 	Immolate(Rank X) 	Spell_Fire_Immolation
+Target Debuff 	Warlock 	Siphon Life(Rank X) 	Spell_Shadow_Requiem
+Target Debuff 	Warlock 	Drain Life(Rank X) 	Spell_Shadow_LifeDrain02
+Target Debuff 	Warlock 	Drain Soul(Rank X) 	Spell_Shadow_Haunting
+Target Debuff 	Warlock 	Drain Mana 	Spell_Shadow_SiphonMana
+Target Debuff 	Warlock 	Curse of Agony(Rank X) 	Spell_Shadow_CurseOfSargeras
+Target Debuff 	Warlock 	Curse of Weakness(Rank X) 	Spell_Shadow_CurseOfMannoroth
+Target Debuff 	Warlock 	Curse of Shadow(Rank X) 	Spell_Shadow_CurseOfAchimonde
+Target Debuff 	Warlock 	Curse of the Elements(Rank X) 	Spell_Shadow_ChillTouch
+Target Debuff 	Warlock 	Curse of Doom 	Spell_Shadow_AuraOfDarkness
+Target Debuff 	Warlock 	Curse of Tongues(Rank X) 	Spell_Shadow_CurseOfTounges
+Target Debuff 	Warlock 	Curse of Recklessness(Rank X) 	Spell_Shadow_UnholyStrength
+Target Debuff 	Warlock 	Curse of Exhaustion(Rank X) 	Spell_Shadow_GrimWard
+Target Debuff 	Warlock 	Improved Shadow Bolt effect 	Spell_Shadow_ShadowBolt
+Target Debuff 	Warlock 	Fear 	Spell_Shadow_Possession
+Target Debuff 	Warlock 	Banish(Rank X) 	Shadow_Cripple
+Target Debuff 	Warlock 	Enslave Demon(Rank X) 	Spell_Shadow_EnslaveDemon
+Target Debuff 	Warlock 	Succubus Seduction 	Spell_Shadow_MindSteal *
+Target Debuff 	Warlock 	Tainted Blood 	Spell_Shadow_LifeDrain
+Target Debuff 	Warlock 	Spell Lock 	Spell_Shadow_MindRot
+Target Debuff 	Warlock 	Howl of Terror 	Spell_Shadow_DeathScream
+Target Debuff 	Warlock 	Death Coil 	Spell_Shadow_DeathCoil
+Target Debuff 	Warrior 	Rend(Rank X) 	Ability_Gouge
+Target Debuff 	Warrior 	ThunderClap(Rank X) 	Spell_Nature_ThunderClap
+Target Debuff 	Warrior 	Piercing Howl 	Spell_Shadow_DeathScream
+Target Debuff 	Warrior 	Hamstring(Rank X) 	Ability_ShockWave
+Target Debuff 	Warrior 	Charge(Rank X) 	Spell_Frost_Stun
+Target Debuff 	Warrior 	Intercept(Rank X) 	Spell_Frost_Stun
+Target Debuff 	Warrior 	Concusive Blow(Rank X) 	Spell_Frost_Stun
+Target Debuff 	Warrior 	Demoralizing Shout(Rank X) 	Ability_Warrior_WarCry
+Target Debuff 	Warrior 	Intimidating Shout(Rank X) 	Ability_GolemThunderClap
+Target Debuff 	Warrior 	Sunder 	Ability_Warrior_Sunder
+Target Debuff 	Priest 	Weakened Soul Effect 	Spell_Holy_AshesToAshes
+Target Debuff 	Priest 	Psychic Scream 	Spell_Shadow_PsychicScream
+Target Debuff 	Priest 	Banish(Rank X) 	Spell_Nature_Slow
+Target Debuff 	Druid 	Rake 	Ability_Druid_Disembowel
+Target Debuff 	Druid 	Moonfire 	Spell_Nature_StarFall
+Target Debuff 	Druid 	Faerie Fire 	Spell_Nature_FaerieFire
+Target Debuff 	Druid 	Sleep 	Spell_Nature_Sleep
+Target Debuff 	Druid 	Insect Swarm 	Spell_Nature_InsectSwarm
+Target Debuff 	Rogue 	Gouge(Rank X) 	Ability_Gouge
+Target Debuff 	Rogue 	Garrote(Rank X) 	Ability_Rogue_Garrote
+Target Debuff 	Rogue 	Blind(Rank X) 	Spell_Shadow_MindSteal *
+Target Debuff 	Rogue 	Rupture(Rank X) 	Ability_Rogue_Rupture
+Target Debuff 	Rogue 	Cheap Shot(Rank X) 	Ability_CheapShot
+Target Debuff 	Rogue 	Sap(Rank X) 	Ability_Sap
+Target Debuff 	Rogue 	Expose Armor(Rank X) 	Ability_Warrior_Riposte
+Target Debuff 	Rogue 	Hemorrhage 	Spell_Shadow_LifeDrain
+Target Debuff 	Rogue 	Kidney shot 	Ability_Rogue_KidneyShot
+Target Debuff 	Shaman 	Frost Shock 	Spell_Frost_FrostShock
+Target Debuff 			Shadow_DeathScream
+Target Debuff 			Shadow_ShadowWordPain
+Target Debuff 			Shadow_BlackPlague
+Target Debuff 			Shadow_AbonimationExplosion
+Target Debuff 			Shadow_CurseOfSargeras
+Target Debuff 			Fire_FlameBolt
+Target Debuff 			Fire_Fireball02
+Target Debuff 			Frost_Stun
+Target Debuff 			Frost_ChainsOfIce
+Target Debuff 	Druid 	Entangling Root 	Nature_StrangleVines
+Target Debuff 	Priest 	Starfall 	Nature_Starfall
+Target Debuff 	Priest 	Holy Fire 	Spell_Holy_SearingLight
+Target Debuff 			Ability_BackStab
+Target Debuff 			Ability_ShockWave
+Target Debuff 			Ability_Vanish
+Target Debuff 			Ability_Warrior_SavageBlow
+Target Debuff 			Misc_Bandage_08
+Proc Buff 	Priest 	Inspiration 	INV_SHIELD_06
+
+
+Sorry for putting some German text in here but I don't know the English client's equivalents. Feel free to change them to the English ones.
+
+In general, it's not the effects name, it's the icon's name; Demon Skin and Demon Armor is therefore virtually the same. This can be useful because it will not require an update when the Rank value changes.
+
+    Note that the Succubus' seduction affect is apparently the same as the rogue's blind ability (I have not verified Blind, but I have verified Seduction) - Voratus
+
+    Note that the Combustion effect is apparently the same as the Fire Aura of the paladin - Filunar
+
+    Please note that when identifying buffs, it works to just use the last set of letters after the underscore. i.e., Spell_Holy_SealOfProtection would be ( HasBuff("SealOfProtection") ). P.S., Yes, Blessing of Might is Spell_Holy_GreaterBlessingofKings, I didn't get confused. I don't have Kings so I can't say what is just yet.
+
+Macro for querying in-game
+
+/script function m(s) DEFAULT_CHAT_FRAME:AddMessage(s); end for i=1,16 do s=UnitBuff("target", i); if(s) then m("B "..i..": "..s); end s=UnitDebuff("target", i); if(s) then m("D "..i..": "..s); end end
+
+Results in something along the lines of:
+
+B 1: Interface\Icons\Spell_Holy_WordFortitude
+D 1: Interface\Icons\Ability_Gouge
+B 2: Interface\Icons\INV_Jewelry_Talisman_07
+
+Finding rare buff icon names
+
+This info is stripped from a post I made on the EU forums regarding macros. Sarf
+
+If you don't want to debug stuff runtime, you can always use the online resources available to us. I use Thottbot.
+
+Thott (of Thottbot fame) has simply copied the icons from WoW and put them on his site so that you can see the actual icons belonging to the spells (he's done this by datamining the client side databases, so no server hacking was involved ^^).
+
+For example, to get the Wyvern Sting debuff, use the link:
+
+http://www.thottbot.com/?s=Wyvern%20Sting
+
+Now, right click the first image that actually belongs to the ability (basically, check that it has a level and belongs to a skill). Now, view the image of that icon:
+
+Image:Inv spear 02.png
+
+(this was what I got - you may get different servers due to load balancing)
+
+Aha! Now, ingame, the folder path is actually using backslash (which, in lua translates to double backslashes due to backslash being an "escape" character) and without file extension. To avoid this mess (and shorten our macros) we will simply use the stuff from the end of "Icons/" until the ".jpg" (or a part of it).
+
+This leaves us with:
+
+INV_Spear_02
+
+Now, if that is too much for our macro, we shorten it down to
+
+Spear_02
+
+Tadah!
+
+In an addon, you should change "Interface/Icons/INV_Spear_02.jpg" into "Interface\\Icons\\INV_Spear_02" 

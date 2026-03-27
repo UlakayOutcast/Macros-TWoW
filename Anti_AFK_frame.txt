@@ -1,0 +1,14 @@
+/run local t=0;local c=0;local f=0;print("Anti AFK is now enabled.");CreateFrame"Anti_AFK_frame":SetScript("OnUpdate",function() f=GetFramerate();t=t+1;if t>=60*f then c=c+1;t=0;SendChatMessage(c.."minuts","WHISPER",nil,UnitName("player"));end;end)
+
+/run local t=0;local c=0;local f=0;
+print("Anti AFK is now enabled.");
+CreateFrame"Anti_AFK_frame":SetScript("OnUpdate",
+	function() 
+		f=GetFramerate();
+		t=t+1;
+		if t>=60*f then 
+			c=c+1;t=0;
+			SendChatMessage(c.."minuts","WHISPER",nil,UnitName("player"));
+		end;
+	end
+)

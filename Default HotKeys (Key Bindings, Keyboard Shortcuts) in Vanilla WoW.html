@@ -1,0 +1,807 @@
+﻿<!DOCTYPE html><html><head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<title>Addons for Vanilla WoW</title>
+
+	<script data-savepage-src="lib/jquery.js"></script>
+
+	<style data-savepage-href="sample.css">a.external {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAFVBMVEVmmcwzmcyZzP8AZswAZv////////9E6giVAAAAB3RSTlP///////8AGksDRgAAADhJREFUGFcly0ESAEAEA0Ei6/9P3sEcVB8kmrwFyni0bOeyyDpy9JTLEaOhQq7Ongf5FeMhHS/4AVnsAZubxDVmAAAAAElFTkSuQmCC") 100% 50% no-repeat;
+	padding-right: 13px;
+}
+body.example {
+	margin: 15px;
+	font-family: sans-serif;
+	font-size: 1em;
+}
+body.example h1 {
+	font-size: 1.2em;
+}
+body.example h2 {
+	font-size: 1em;
+}
+
+body.example .description,
+body.example .sample-links {
+/*	border: thin solid gray; */
+/*	background-color: #d0d0f0; */
+	background-color: #4080C0;
+	padding: 5px;
+	margin: 5px 0;
+	font-size: small;
+}
+
+p.version-info {
+	color: gray;
+	font-size: 0.6em;
+}
+
+p.warning,
+p.info,
+div.info {
+	font-size: small;
+	background-color: #ffffa0;
+	background-image: /*savepage-url=../doc/iconInfo_32x32.png*/ url();
+	background-repeat: no-repeat;
+	padding: 5px;
+	padding-left: 40px;
+	min-height: 25px;
+}
+.sampleButtonContainer
+{
+	margin-right: 10px;
+}
+.sampleButtonContainer a
+{
+	color: navy;
+	text-decoration: none;
+	padding: 1px 3px;
+	font-size: 50%;
+}
+p#sampleButtons h5
+{
+	font-size: 9pt;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-weight: bold;
+}
+
+p.sample-links a,
+p.sample-links a:visited
+{
+	color: navy;
+	text-decoration: none;
+	margin-left: 15px;
+	padding: 1px 3px;
+	font-size: small;
+}
+p.sample-links a:hover
+{
+	text-decoration: underline;
+}
+
+pre{
+  background:#eee;
+  border:1px solid #999;
+  padding:.5em;
+  margin:.5em;
+  font-size:.9em;
+}
+
+ul.fancytree-container {
+	margin: 4px; /* leave some room for the safari focus border */
+}
+
+iframe.embedded-plunkr {
+	border: 1px solid #999;
+	width: 100%;
+	height: 500px;
+}
+iframe.embedded-jsbin {
+	border: 1px solid #999;
+	width: 100%;
+	height: 500px;
+}
+</style>
+	<script data-savepage-src="sample.js"></script>
+
+<style type="text/css">
+
+/*   TD White   */
+.tdw {
+  padding: 4px 4px 4px 4px;
+  font-size: 18px;
+  font-weight: bold;
+  white-space: pre;
+  background-color: #D8D8D8;
+}
+
+/*   TD White centered   */
+.tdwc {
+  padding: 4px 4px 4px 4px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  white-space: pre;
+  background-color: #D8D8D8;
+}
+
+/*   TD White - header   */
+.tdwh {
+  padding: 5px 5px 5px 5px;
+  font-size: 18px;
+  font-weight: bold;
+  white-space: pre;
+}
+  
+/*   TD - small space (vertical)   */
+.tdss {
+  font-size: 2px;
+  white-space: pre;
+}
+
+/*   TD gray   */
+.tdg {
+  padding: 4px 4px 4px 4px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #C4C4C4;
+}
+
+/*   TD gray centered   */
+.tdgc {
+  padding: 4px 4px 4px 4px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #C4C4C4;
+}
+
+</style>
+
+
+<style id="savepage-cssvariables">
+  :root {
+  }
+</style>
+<script id="savepage-shadowloader" type="application/javascript">
+  "use strict";
+  window.addEventListener("DOMContentLoaded",
+  function(event) {
+    savepage_ShadowLoader(5);
+  },false);
+  function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+</script>
+<meta name="savepage-url" content="https://frostshock.github.io/wabc/hotkeys.html">
+<meta name="savepage-title" content="Addons for Vanilla WoW">
+<meta name="savepage-pubdate" content="Unknown">
+<meta name="savepage-from" content="https://frostshock.github.io/wabc/hotkeys.html">
+<meta name="savepage-date" content="Fri Jun 24 2022 14:25:42 GMT+0700 (GMT+07:00)">
+<meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="25.12">
+<meta name="savepage-comments" content="">
+  </head>
+
+<body class="example">
+	<p class="description">
+		<b><a href="https://github.com/mar10/fancytree">Fancytree</a></b> is a JavaScript tree view / tree grid plugin with support for keyboard,
+		inline editing, filtering, checkboxes, drag'n'drop, and lazy loading. This site presents some live examples for Fancytree.
+	</p>
+	<br>
+
+<div style="white-space: pre">
+<font size="6"><b>HotKeys (Key Bindings, Keyboard Shortcuts)</b></font>
+
+	<br><a id="Hotkeys"></a>
+	<div style="background-color:#D0D0D0"><font size="5"><b>Optimized HotKeys configurations (Key Bindings, Keyboard Shortcuts) in Vanilla WoW</b></font></div>
+
+                     <a target="_blank" data-savepage-href="samples/bindings-cache-vanilla-optimized.wtf" href="https://frostshock.github.io/wabc/samples/bindings-cache-vanilla-optimized.wtf">bindings-cache-vanilla-optimized.wtf</a>       -       <a target="_blank" data-savepage-href="samples/bindings-cache-vanilla-optimized-principles.txt" href="https://frostshock.github.io/wabc/samples/bindings-cache-vanilla-optimized-principles.txt">View here the principles of that file</a>
+
+
+	<div style="background-color:#D0D0D0"><font size="5"><b>Default HotKeys (Key Bindings, Keyboard Shortcuts) in Vanilla WoW</b></font></div>
+
+The single-key hotkeys are placed inside quotes (") so it's easier to search (Ctrl + F) for a hotkey like for example "X")
+
+&lt;also available in <a target="_blank" data-savepage-href="documents/vanilla-wow-key-bindings.xls" href="https://frostshock.github.io/wabc/documents/vanilla-wow-key-bindings.xls">.xls format</a> and in <a target="_blank" data-savepage-href="documents/vanilla-wow-key-bindings.txt" href="https://frostshock.github.io/wabc/documents/vanilla-wow-key-bindings.txt">text format</a> (no <a target="_blank" data-savepage-href="documents/vanilla-wow-key-bindings-noblizzid.txt" href="https://frostshock.github.io/wabc/documents/vanilla-wow-key-bindings-noblizzid.txt">BlizzID</a> version - also <a target="_blank" data-savepage-href="documents/vanilla-wow-key-bindings-2column.txt" href="https://frostshock.github.io/wabc/documents/vanilla-wow-key-bindings-2column.txt">the 2-column</a> version) and <a target="_blank" data-savepage-href="documents/vanilla-wow-key-bindings-sorted.txt" href="https://frostshock.github.io/wabc/documents/vanilla-wow-key-bindings-sorted.txt">sorted by hotkey version</a> (no <a target="_blank" data-savepage-href="documents/vanilla-wow-key-bindings-sorted-noblizzid.txt" href="https://frostshock.github.io/wabc/documents/vanilla-wow-key-bindings-sorted-noblizzid.txt">BlizzID</a> version)&gt;
+
+
+<a data-savepage-href="hotkeys.html#movement" href="#movement">Movement</a>   -   <a data-savepage-href="hotkeys.html#chat" href="#chat">Chat</a>   -   <a data-savepage-href="hotkeys.html#actionbars" href="#actionbars">Action Bars</a>   -   <a data-savepage-href="hotkeys.html#targeting" href="#targeting">Targeting</a>   -   <a data-savepage-href="hotkeys.html#interface-panel" href="#interface-panel">Interface Panel</a>   -   <a data-savepage-href="hotkeys.html#miscellaneous" href="#miscellaneous">Miscellaneous</a>   -   <a data-savepage-href="hotkeys.html#camera" href="#camera">Camera</a>   -   <a data-savepage-href="hotkeys.html#multiactionbar" href="#multiactionbar">MultiActionBar</a>   -   <a data-savepage-href="hotkeys.html#raid-targeting" href="#raid-targeting">Raid Targeting</a>   -   <a data-savepage-href="hotkeys.html#bindings-cache" href="#bindings-cache">bindings-cache.wtf</a>
+</div>
+<br><br>
+
+<a id="movement"></a>
+
+<table border="0">
+
+<tbody><tr>   <td class="tdg">Command</td>   <td class="tdgc"> </td>   <td class="tdgc"><center>Key 1</center></td>   <td class="tdgc"> </td>   <td class="tdgc"><center>Key 2</center></td>   <td class="tdgc"> </td>   <td class="tdgc"><center>Blizzard ID</center></td>   </tr>
+
+<tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Movement keys</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Move and Steer</td>   <td class="tdgc">-</td>   <td class="tdgc">Middle Mouse</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MOVEANDSTEER</td>   </tr>
+<tr>   <td class="tdw">Move Forward</td>   <td class="tdwc">-</td>   <td class="tdwc">"W"</td>   <td class="tdwc"> </td>   <td class="tdwc">Up Arrow</td>   <td class="tdwc"> </td>   <td class="tdwc">MOVEFORWARD</td>   </tr>
+<tr>   <td class="tdg">Move Backward</td>   <td class="tdgc">-</td>   <td class="tdgc">"S"</td>   <td class="tdgc"> </td>   <td class="tdgc">Down Arrow</td>   <td class="tdgc"> </td>   <td class="tdgc">MOVEBACKWARD</td>   </tr>
+<tr>   <td class="tdw">Turn Left</td>   <td class="tdwc">-</td>   <td class="tdwc">"A"</td>   <td class="tdwc"> </td>   <td class="tdwc">Left Arrow</td>   <td class="tdwc"> </td>   <td class="tdwc">TURNLEFT</td>   </tr>
+<tr>   <td class="tdg">Turn Right</td>   <td class="tdgc">-</td>   <td class="tdgc">"D"</td>   <td class="tdgc"> </td>   <td class="tdgc">Right Arrow</td>   <td class="tdgc"> </td>   <td class="tdgc">TURNRIGHT</td>   </tr>
+<tr>   <td class="tdw">Strafe Left</td>   <td class="tdwc">-</td>   <td class="tdwc">"Q"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">STRAFELEFT</td>   </tr>
+<tr>   <td class="tdg">Strafe Right</td>   <td class="tdgc">-</td>   <td class="tdgc">"E"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">STRAFERIGHT</td>   </tr>
+<tr>   <td class="tdw">Jump</td>   <td class="tdwc">-</td>   <td class="tdwc">Spacebar</td>   <td class="tdwc"> </td>   <td class="tdwc">Num Pad 0</td>   <td class="tdwc"> </td>   <td class="tdwc">JUMP</td>   </tr>
+<tr>   <td class="tdg">Toggle Sit/Stand</td>   <td class="tdgc">-</td>   <td class="tdgc">"X"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SITORSTAND</td>   </tr>
+<tr>   <td class="tdw">Sheath/Unsheath Weapon</td>   <td class="tdwc">-</td>   <td class="tdwc">"Z"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLESHEATH</td>   </tr>
+<tr>   <td class="tdg">Toggle Autorun</td>   <td class="tdgc">-</td>   <td class="tdgc">Num Lock</td>   <td class="tdgc"> </td>   <td class="tdgc">Mouse Button 4</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEAUTORUN</td>   </tr>
+<tr>   <td class="tdw">Pitch Up</td>   <td class="tdwc">-</td>   <td class="tdwc">Insert</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">PITCHUP</td>   </tr>
+<tr>   <td class="tdg">Pitch Down</td>   <td class="tdgc">-</td>   <td class="tdgc">Delete</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">PITCHDOWN</td>   </tr>
+<tr>   <td class="tdw">Toggle Run/Walk</td>   <td class="tdwc">-</td>   <td class="tdwc">Num Pad /</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLERUN</td>   </tr>
+<tr>   <td class="tdg">Follow Target</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">FOLLOWTARGET</td>   </tr>
+</tbody></table>
+
+
+<a id="chat"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Chat Functions</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Open Chat</td>   <td class="tdgc">-</td>   <td class="tdgc" width="270">Enter</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">OPENCHAT</td>   </tr>
+<tr>   <td class="tdw">Open Chat Slash</td>   <td class="tdwc">-</td>   <td class="tdwc">"/"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">OPENCHATSLASH</td>   </tr>
+<tr>   <td class="tdg">Chat Page Up</td>   <td class="tdgc">-</td>   <td class="tdgc">Page Up</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>      <td class="tdgc"> </td>   <td class="tdgc">CHATPAGEUP</td>   </tr>
+<tr>   <td class="tdw">Chat Page Down</td>   <td class="tdwc">-</td>   <td class="tdwc">Page Down</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">CHATPAGEDOWN</td>   </tr>
+<tr>   <td class="tdg">Chat Bottom</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + Page Down</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">CHATBOTTOM</td>   </tr>
+<tr>   <td class="tdw">Chat Reply</td>   <td class="tdwc">-</td>   <td class="tdwc">"R"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">REPLY</td>   </tr>
+<tr>   <td class="tdg">Re-Whisper</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + R</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">REPLY2</td>   </tr>
+<tr>   <td class="tdw">Combat Log Page Up</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + Page Up</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">COMBATLOGPAGEUP</td>   </tr>
+<tr>   <td class="tdg">Combat Log Page Down</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + Page Down</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">COMBATLOGPAGEDOWN</td>   </tr>
+<tr>   <td class="tdw">Combat Log Bottom</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + Shift + Page Down</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">COMBATLOGBOTTOM</td>   </tr>
+<tr>   <td class="tdg">Toggle Combat Log</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + C</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLECOMBATLOG</td>   </tr>
+</tbody></table>
+
+
+<a id="actionbars"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Action Bar Functions</td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Action Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">"1"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONBUTTON1</td>   </tr>
+<tr>   <td class="tdw">Action Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">"2"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONBUTTON2</td>   </tr>
+<tr>   <td class="tdg">Action Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">"3"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONBUTTON3</td>   </tr>
+<tr>   <td class="tdw">Action Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">"4"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONBUTTON4</td>   </tr>
+<tr>   <td class="tdg">Action Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">"5"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONBUTTON5</td>   </tr>
+<tr>   <td class="tdw">Action Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">"6"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONBUTTON6</td>   </tr>
+<tr>   <td class="tdg">Action Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">"7"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONBUTTON7</td>   </tr>
+<tr>   <td class="tdw">Action Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">"8"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONBUTTON8</td>   </tr>
+<tr>   <td class="tdg">Action Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">"9"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONBUTTON9</td>   </tr>
+<tr>   <td class="tdw">Action Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">"0"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONBUTTON10</td>   </tr>
+<tr>   <td class="tdg">Action Button 11</td>   <td class="tdgc">-</td>   <td class="tdgc">"-"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONBUTTON11</td>   </tr>
+<tr>   <td class="tdw">Action Button 12</td>   <td class="tdwc">-</td>   <td class="tdwc">"="</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONBUTTON12</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Self Action Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Alt + 1</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SELFACTIONBUTTON1</td>   </tr>
+<tr>   <td class="tdw">Self Action Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Alt + 2</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SELFACTIONBUTTON2</td>   </tr>
+<tr>   <td class="tdg">Self Action Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Alt + 3</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SELFACTIONBUTTON3</td>   </tr>
+<tr>   <td class="tdw">Self Action Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Alt + 4</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SELFACTIONBUTTON4</td>   </tr>
+<tr>   <td class="tdg">Self Action Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Alt + 5</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SELFACTIONBUTTON5</td>   </tr>
+<tr>   <td class="tdw">Self Action Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Alt + 6</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SELFACTIONBUTTON6</td>   </tr>
+<tr>   <td class="tdg">Self Action Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">Alt + 7</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SELFACTIONBUTTON7</td>   </tr>
+<tr>   <td class="tdw">Self Action Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">Alt + 8</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SELFACTIONBUTTON8</td>   </tr>
+<tr>   <td class="tdg">Self Action Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">Alt + 9</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SELFACTIONBUTTON9</td>   </tr>
+<tr>   <td class="tdw">Self Action Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">Alt + 0</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SELFACTIONBUTTON10</td>   </tr>
+<tr>   <td class="tdg">Self Action Button 11</td>   <td class="tdgc">-</td>   <td class="tdgc">Alt + -</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SELFACTIONBUTTON11</td>   </tr>
+<tr>   <td class="tdw">Self Action Button 12</td>   <td class="tdwc">-</td>   <td class="tdwc">Alt + =</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SELFACTIONBUTTON12</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Special Action Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + F1</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SHAPESHIFTBUTTON1</td>   </tr>
+<tr>   <td class="tdw">Special Action Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + F2</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SHAPESHIFTBUTTON2</td>   </tr>
+<tr>   <td class="tdg">Special Action Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + F3</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SHAPESHIFTBUTTON3</td>   </tr>
+<tr>   <td class="tdw">Special Action Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + F4</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SHAPESHIFTBUTTON4</td>   </tr>
+<tr>   <td class="tdg">Special Action Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + F5</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SHAPESHIFTBUTTON5</td>   </tr>
+<tr>   <td class="tdw">Special Action Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + F6</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SHAPESHIFTBUTTON6</td>   </tr>
+<tr>   <td class="tdg">Special Action Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + F7</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SHAPESHIFTBUTTON7</td>   </tr>
+<tr>   <td class="tdw">Special Action Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + F8</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SHAPESHIFTBUTTON8</td>   </tr>
+<tr>   <td class="tdg">Special Action Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + F9</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SHAPESHIFTBUTTON9</td>   </tr>
+<tr>   <td class="tdw">Special Action Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + F10</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SHAPESHIFTBUTTON10</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Secondary Action Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + 1</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">BONUSACTIONBUTTON1</td>   </tr>
+<tr>   <td class="tdw">Secondary Action Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + 2</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">BONUSACTIONBUTTON2</td>   </tr>
+<tr>   <td class="tdg">Secondary Action Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + 3</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">BONUSACTIONBUTTON3</td>   </tr>
+<tr>   <td class="tdw">Secondary Action Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + 4</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">BONUSACTIONBUTTON4</td>   </tr>
+<tr>   <td class="tdg">Secondary Action Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + 5</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">BONUSACTIONBUTTON5</td>   </tr>
+<tr>   <td class="tdw">Secondary Action Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + 6</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">BONUSACTIONBUTTON6</td>   </tr>
+<tr>   <td class="tdg">Secondary Action Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + 7</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">BONUSACTIONBUTTON7</td>   </tr>
+<tr>   <td class="tdw">Secondary Action Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + 8</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">BONUSACTIONBUTTON8</td>   </tr>
+<tr>   <td class="tdg">Secondary Action Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + 9</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">BONUSACTIONBUTTON9</td>   </tr>
+<tr>   <td class="tdw">Secondary Action Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + 0</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">BONUSACTIONBUTTON10</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Action Page 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + 1</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONPAGE1</td>   </tr>
+<tr>   <td class="tdw">Action Page 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + 2</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONPAGE2</td>   </tr>
+<tr>   <td class="tdg">Action Page 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + 3</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONPAGE3</td>   </tr>
+<tr>   <td class="tdw">Action Page 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + 4</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONPAGE4</td>   </tr>
+<tr>   <td class="tdg">Action Page 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + 5</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ACTIONPAGE5</td>   </tr>
+<tr>   <td class="tdw">Action Page 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + 6</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ACTIONPAGE6</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Previous Action Bar</td>   <td class="tdgc">-</td>   <td class="tdgc" width="270">Shift + Up Arrow</td>   <td class="tdgc"> </td>   <td class="tdgc">Shift + Mouse Wheel Up</td>   <td class="tdgc"> </td>   <td class="tdgc">PREVIOUSACTIONPAGE</td>   </tr>
+<tr>   <td class="tdw">Next Action Bar</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + Down Arrow</td>   <td class="tdwc"> </td>   <td class="tdwc">Shift + Mouse Wheel Down</td>   <td class="tdwc"> </td>   <td class="tdwc">NEXTACTIONPAGE</td>   </tr>
+<tr>   <td class="tdg">Toggle Action Bar Lock</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEACTIONBARLOCK</td>   </tr>
+<tr>   <td class="tdw">Auto Self Cast</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEAUTOSELFCAST</td>   </tr>
+</tbody></table>
+
+
+<a id="targeting"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Targeting Functions</td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Target Nearest Enemy</td>   <td class="tdgc">-</td>   <td class="tdgc">Tab</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETNEARESTENEMY</td>   </tr>
+<tr>   <td class="tdw">Target Previous Enemy</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + Tab</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TARGETPREVIOUSENEMY</td>   </tr>
+<tr>   <td class="tdg">Target Nearest Friend</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + Tab</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETNEARESTFRIEND</td>   </tr>
+<tr>   <td class="tdw">Target Previous Friend</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + Shift + Tab</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TARGETPREVIOUSFRIEND</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Target Self</td>   <td class="tdgc">-</td>   <td class="tdgc">"F1"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETSELF</td>   </tr>
+<tr>   <td class="tdw">Target Party Member 1</td>   <td class="tdwc">-</td>   <td class="tdwc">"F2"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TARGETPARTYMEMBER1</td>   </tr>
+<tr>   <td class="tdg">Target Party Member 2</td>   <td class="tdgc">-</td>   <td class="tdgc">"F3"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETPARTYMEMBER2</td>   </tr>
+<tr>   <td class="tdw">Target Party Member 3</td>   <td class="tdwc">-</td>   <td class="tdwc">"F4"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TARGETPARTYMEMBER3</td>   </tr>
+<tr>   <td class="tdg">Target Party Member 4</td>   <td class="tdgc">-</td>   <td class="tdgc">"F5"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETPARTYMEMBER4</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdw">Target Pet</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + F1</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TARGETPET</td>   </tr>
+<tr>   <td class="tdg">Target Party Pet 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + F2</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETPARTYPET1</td>   </tr>
+<tr>   <td class="tdw">Target Party Pet 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + F3</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TARGETPARTYPET2</td>   </tr>
+<tr>   <td class="tdg">Target Party Pet 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + F4</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETPARTYPET3</td>   </tr>
+<tr>   <td class="tdw">Target Party Pet 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + F5</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TARGETPARTYPET4</td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Target Last Hostile</td>   <td class="tdgc">-</td>   <td class="tdgc">"G"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TARGETLASTHOSTILE</td>   </tr>
+<tr>   <td class="tdw">Assist Target</td>   <td class="tdwc">-</td>   <td class="tdwc">"F"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ASSISTTARGET</td>   </tr>
+<tr>   <td class="tdg">Show Name Plates</td>   <td class="tdgc">-</td>   <td class="tdgc">"V"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">NAMEPLATES</td>   </tr>
+<tr>   <td class="tdw">Show Friendly Name Plates</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + V</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">FRIENDNAMEPLATES</td>   </tr>
+<tr>   <td class="tdg">Show All Name Plates</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + V</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">ALLNAMEPLATES</td>   </tr>
+<tr>   <td class="tdw">Attack Target</td>   <td class="tdwc">-</td>   <td class="tdwc">"T"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">ATTACKTARGET</td>   </tr>
+<tr>   <td class="tdg">Pet Attack</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + T</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">PETATTACK</td>   </tr>
+</tbody></table>
+
+
+<a id="interface-panel"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Interface Panel Functions</td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Toggle Character Pane</td>   <td class="tdgc">-</td>   <td class="tdgc">"C"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLECHARACTER0</td>   </tr>
+
+<tr>   <td class="tdw">Toggle Backpack</td>   <td class="tdwc">-</td>   <td class="tdwc">"B"</td>   <td class="tdwc"> </td>   <td class="tdwc">"F12"</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEBACKPACK</td>   </tr>
+<tr>   <td class="tdg">Toggle Bag 1</td>   <td class="tdgc">-</td>   <td class="tdgc">"F8"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEBAG1</td>   </tr>
+<tr>   <td class="tdw">Toggle Bag 2</td>   <td class="tdwc">-</td>   <td class="tdwc">"F9"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEBAG2</td>   </tr>
+<tr>   <td class="tdg">Toggle Bag 3</td>   <td class="tdgc">-</td>   <td class="tdgc">"F10"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEBAG3</td>   </tr>
+<tr>   <td class="tdw">Toggle Bag 4</td>   <td class="tdwc">-</td>   <td class="tdwc">"F11"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEBAG4</td>   </tr>
+<tr>   <td class="tdg">Open All Bags</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + B</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">OPENALLBAGS</td>   </tr>
+<tr>   <td class="tdw">Toggle Keyring</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEKEYRING</td>   </tr>
+
+<tr>   <td class="tdg">Toggle Spellbook</td>   <td class="tdgc">-</td>   <td class="tdgc">"P"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLESPELLBOOK</td>   </tr>
+<tr>   <td class="tdw">Toggle Pet Book</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + I</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEPETBOOK</td>   </tr>
+<tr>   <td class="tdg">Toggle Talent Pane</td>   <td class="tdgc">-</td>   <td class="tdgc">"N"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLETALENTS</td>   </tr>
+<tr>   <td class="tdw">Toggle Honor Pane</td>   <td class="tdwc">-</td>   <td class="tdwc">"H"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLECHARACTER4</td>   </tr>
+<tr>   <td class="tdg">Toggle Pet Pane</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + P</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLECHARACTER3</td>   </tr>
+<tr>   <td class="tdw">Toggle Reputation Pane</td>   <td class="tdwc">-</td>   <td class="tdwc">"U"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLECHARACTER2</td>   </tr>
+<tr>   <td class="tdg">Toggle Skill Pane</td>   <td class="tdgc">-</td>   <td class="tdgc">"K"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLECHARACTER1</td>   </tr>
+<tr>   <td class="tdw">Toggle Quest Log</td>   <td class="tdwc">-</td>   <td class="tdwc">"L"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEQUESTLOG</td>   </tr>
+<tr>   <td class="tdg">Toggle Game Menu</td>   <td class="tdgc">-</td>   <td class="tdgc">Escape</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEGAMEMENU</td>   </tr>
+<tr>   <td class="tdw">Toggle Minimap</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEMINIMAP</td>   </tr>
+<tr>   <td class="tdg">Toggle World Map Pane</td>   <td class="tdgc">-</td>   <td class="tdgc">"M"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEWORLDMAP</td>   </tr>
+<tr>   <td class="tdw">Toggle Social Pane</td>   <td class="tdwc">-</td>   <td class="tdwc">"O"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLESOCIAL</td>   </tr>
+<tr>   <td class="tdg">Toggle Friends Pane</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEFRIENDSTAB</td>   </tr>
+<tr>   <td class="tdw">Toggle Who Pane</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEWHOTAB</td>   </tr>
+<tr>   <td class="tdg">Toggle Guild Pane</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEGUILDTAB</td>   </tr>
+<tr>   <td class="tdw">Toggle Raid Pane</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLERAIDTAB</td>   </tr>
+<tr>   <td class="tdg">Toggle Score Screen</td>   <td class="tdgc">-</td>   <td class="tdgc">Shift + Spacebar</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEWORLDSTATESCORES</td>   </tr>
+<tr>   <td class="tdw">Toggle Battle Map</td>   <td class="tdwc">-</td>   <td class="tdwc">Shift + M</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEBATTLEFIELDMINIMAP</td>   </tr>
+</tbody></table>
+
+
+<a id="miscellaneous"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Miscellaneous Functions</td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Minimap Zoom In</td>   <td class="tdgc">-</td>   <td class="tdgc">Num Pad +</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MINIMAPZOOMIN</td>   </tr>
+<tr>   <td class="tdw">Minimap Zoom Out</td>   <td class="tdwc">-</td>   <td class="tdwc">Num Pad -</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MINIMAPZOOMOUT</td>   </tr>
+<tr>   <td class="tdg">Toggle Music</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + M</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEMUSIC</td>   </tr>
+<tr>   <td class="tdw">Toggle Sound</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + S</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLESOUND</td>   </tr>
+<tr>   <td class="tdg">Master Volume Up</td>   <td class="tdgc">-</td>   <td class="tdgc">Ctrl + =</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MASTERVOLUMEUP</td>   </tr>
+<tr>   <td class="tdw">Master Volume Down</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + -</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MASTERVOLUMEDOWN</td>   </tr>
+<tr>   <td class="tdg">Toggle User Interface</td>   <td class="tdgc">-</td>   <td class="tdgc">Alt + Z</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">TOGGLEUI</td>   </tr>
+<tr>   <td class="tdw">Toggle Framerate Display</td>   <td class="tdwc">-</td>   <td class="tdwc">Ctrl + R</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">TOGGLEFPS</td>   </tr>
+<tr>   <td class="tdg">Screen Shot</td>   <td class="tdgc">-</td>   <td class="tdgc">Print Screen</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SCREENSHOT</td>   </tr>
+</tbody></table>
+
+
+<a id="camera"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Camera Functions</td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Next View</td>   <td class="tdgc">-</td>   <td class="tdgc">"End"</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">NEXTVIEW</td>   </tr>
+<tr>   <td class="tdw">Previous View</td>   <td class="tdwc">-</td>   <td class="tdwc">"Home"</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">PREVVIEW</td>   </tr>
+<tr>   <td class="tdg">Zoom In</td>   <td class="tdgc">-</td>   <td class="tdgc">Mouse Wheel Up</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">CAMERAZOOMIN</td>   </tr>
+<tr>   <td class="tdw">Zoom Out</td>   <td class="tdwc">-</td>   <td class="tdwc">Mouse Wheel Down</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">CAMERAZOOMOUT</td>   </tr>
+
+<tr>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   </tr>
+<tr>   <td class="tdg">Set View 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SETVIEW1</td>   </tr>
+<tr>   <td class="tdw">Set View 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SETVIEW2</td>   </tr>
+<tr>   <td class="tdg">Set View 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SETVIEW3</td>   </tr>
+<tr>   <td class="tdw">Set View 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SETVIEW4</td>   </tr>
+<tr>   <td class="tdg">Set View 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SETVIEW5</td>   </tr>
+
+<tr>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   </tr>
+<tr>   <td class="tdw">Save View 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SAVEVIEW2</td>   </tr>
+<tr>   <td class="tdg">Save View 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SAVEVIEW3</td>   </tr>
+<tr>   <td class="tdw">Save View 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SAVEVIEW4</td>   </tr>
+<tr>   <td class="tdg">Save View 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SAVEVIEW5</td>   </tr>
+
+<tr>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   </tr>
+<tr>   <td class="tdw">Save View 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SAVEVIEW2</td>   </tr>
+<tr>   <td class="tdg">Save View 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SAVEVIEW3</td>   </tr>
+<tr>   <td class="tdw">Save View 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">SAVEVIEW4</td>   </tr>
+<tr>   <td class="tdg">Save View 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">SAVEVIEW5</td>   </tr>
+
+<tr>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   </tr>
+<tr>   <td class="tdw">Reset View 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">RESETVIEW2</td>   </tr>
+<tr>   <td class="tdg">Reset View 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">RESETVIEW3</td>   </tr>
+<tr>   <td class="tdw">Reset View 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">RESETVIEW4</td>   </tr>
+<tr>   <td class="tdg">Reset View 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">RESETVIEW5</td>   </tr>
+
+<tr>   <td class="tdw">Flip Camera</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">FLIPCAMERAYAW</td>   </tr>
+</tbody></table>
+
+<a id="multiactionbar"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   MultiActionBar Bindings</td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">BottomLeft Action Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR1BUTTON1</td>   </tr>
+<tr>   <td class="tdw">BottomLeft Action Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR1BUTTON2</td>   </tr>
+<tr>   <td class="tdg">BottomLeft Action Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR1BUTTON3</td>   </tr>
+<tr>   <td class="tdw">BottomLeft Action Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR1BUTTON4</td>   </tr>
+<tr>   <td class="tdg">BottomLeft Action Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR1BUTTON5</td>   </tr>
+<tr>   <td class="tdw">BottomLeft Action Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR1BUTTON6</td>   </tr>
+<tr>   <td class="tdg">BottomLeft Action Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR1BUTTON7</td>   </tr>
+<tr>   <td class="tdw">BottomLeft Action Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR1BUTTON8</td>   </tr>
+<tr>   <td class="tdg">BottomLeft Action Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR1BUTTON9</td>   </tr>
+<tr>   <td class="tdw">BottomLeft Action Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR1BUTTON10</td>   </tr>
+<tr>   <td class="tdg">BottomLeft Action Button 11</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR1BUTTON11</td>   </tr>
+<tr>   <td class="tdw">BottomLeft Action Button 12</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR1BUTTON12</td>   </tr>
+
+<tr>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   </tr>
+<tr>   <td class="tdg">BottomRight Action Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR2BUTTON1</td>   </tr>
+<tr>   <td class="tdw">BottomRight Action Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR2BUTTON2</td>   </tr>
+<tr>   <td class="tdg">BottomRight Action Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR2BUTTON3</td>   </tr>
+<tr>   <td class="tdw">BottomRight Action Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR2BUTTON4</td>   </tr>
+<tr>   <td class="tdg">BottomRight Action Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR2BUTTON5</td>   </tr>
+<tr>   <td class="tdw">BottomRight Action Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR2BUTTON6</td>   </tr>
+<tr>   <td class="tdg">BottomRight Action Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR2BUTTON7</td>   </tr>
+<tr>   <td class="tdw">BottomRight Action Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR2BUTTON8</td>   </tr>
+<tr>   <td class="tdg">BottomRight Action Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR2BUTTON9</td>   </tr>
+<tr>   <td class="tdw">BottomRight Action Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR2BUTTON10</td>   </tr>
+<tr>   <td class="tdg">BottomRight Action Button 11</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR2BUTTON11</td>   </tr>
+<tr>   <td class="tdw">BottomRight Action Button 12</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR2BUTTON12</td>   </tr>
+
+<tr>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   </tr>
+<tr>   <td class="tdg">Right Action Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR3BUTTON1</td>   </tr>
+<tr>   <td class="tdw">Right Action Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR3BUTTON2</td>   </tr>
+<tr>   <td class="tdg">Right Action Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR3BUTTON3</td>   </tr>
+<tr>   <td class="tdw">Right Action Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR3BUTTON4</td>   </tr>
+<tr>   <td class="tdg">Right Action Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR3BUTTON5</td>   </tr>
+<tr>   <td class="tdw">Right Action Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR3BUTTON6</td>   </tr>
+<tr>   <td class="tdg">Right Action Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR3BUTTON7</td>   </tr>
+<tr>   <td class="tdw">Right Action Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR3BUTTON8</td>   </tr>
+<tr>   <td class="tdg">Right Action Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR3BUTTON9</td>   </tr>
+<tr>   <td class="tdw">Right Action Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR3BUTTON10</td>   </tr>
+<tr>   <td class="tdg">Right Action Button 11</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR3BUTTON11</td>   </tr>
+<tr>   <td class="tdw">Right Action Button 12</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR3BUTTON12</td>   </tr>
+
+<tr>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   <td class="tdss"> </td>   </tr>
+<tr>   <td class="tdg">Right ActionBar 2 Button 1</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR4BUTTON1</td>   </tr>
+<tr>   <td class="tdw">Right ActionBar 2 Button 2</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR4BUTTON2</td>   </tr>
+<tr>   <td class="tdg">Right ActionBar 2 Button 3</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR4BUTTON3</td>   </tr>
+<tr>   <td class="tdw">Right ActionBar 2 Button 4</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR4BUTTON4</td>   </tr>
+<tr>   <td class="tdg">Right ActionBar 2 Button 5</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR4BUTTON5</td>   </tr>
+<tr>   <td class="tdw">Right ActionBar 2 Button 6</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR4BUTTON6</td>   </tr>
+<tr>   <td class="tdg">Right ActionBar 2 Button 7</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR4BUTTON7</td>   </tr>
+<tr>   <td class="tdw">Right ActionBar 2 Button 8</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR4BUTTON8</td>   </tr>
+<tr>   <td class="tdg">Right ActionBar 2 Button 9</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR4BUTTON9</td>   </tr>
+<tr>   <td class="tdw">Right ActionBar 2 Button 10</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR4BUTTON10</td>   </tr>
+<tr>   <td class="tdg">Right ActionBar 2 Button 11</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">MULTIACTIONBAR4BUTTON11</td>   </tr>
+<tr>   <td class="tdw">Right ActionBar 2 Button 12</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">MULTIACTIONBAR4BUTTON12</td>   </tr>
+</tbody></table>
+
+
+<a id="raid-targeting"></a>
+
+<table border="0">
+<tbody><tr>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="280"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="260"> </td>   <td class="tdss" width="30"> </td>   <td class="tdss" width="320"> </td>   </tr>
+<tr>   <td class="tdwh">   Raid Targeting</td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   <td class="tdwh"></td>   </tr>
+<tr>   <td class="tdss"> </td>   </tr>
+
+<tr>   <td class="tdg">Assign Star to Target</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">RAIDTARGET1</td>   </tr>
+<tr>   <td class="tdw">Assign Circle to Target</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">RAIDTARGET2</td>   </tr>
+<tr>   <td class="tdg">Assign Diamond to Target</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">RAIDTARGET3</td>   </tr>
+<tr>   <td class="tdw">Assign Triangle to Target</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">RAIDTARGET4</td>   </tr>
+<tr>   <td class="tdg">Assign Moon to Target</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">RAIDTARGET5</td>   </tr>
+<tr>   <td class="tdw">Assign Square to Target</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">RAIDTARGET6</td>   </tr>
+<tr>   <td class="tdg">Assign Cross to Target</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">RAIDTARGET7</td>   </tr>
+<tr>   <td class="tdw">Assign Skull to Target</td>   <td class="tdwc">-</td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">Not Bound</td>   <td class="tdwc"> </td>   <td class="tdwc">RAIDTARGET8</td>   </tr>
+<tr>   <td class="tdg">Clear raid target icon</td>   <td class="tdgc">-</td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">Not Bound</td>   <td class="tdgc"> </td>   <td class="tdgc">RAIDTARGETNONE</td>   </tr>
+</tbody></table>
+
+<br><br><br><br>
+
+
+<a id="bindings-cache"></a>
+<div style="white-space: pre">
+The "bindings-cache.wtf" file also contains these hidden Key Bindings, they are not shown in the user interface (Main Menu - Key Bindings):
+
+<div style="white-space: pre; background-color: #D8D8D8; width: 800px; padding: 10px 10px 10px 10px;">bind CTRL-Y TOGGLESTATS
+bind CTRL-Q TOGGLETRIS
+bind CTRL-W TOGGLEPORTALS
+bind CTRL-E TOGGLECOLLISION
+bind CTRL-T TOGGLECOLLISIONDISPLAY
+bind ALT-B TOGGLEPLAYERBOUNDS
+bind ALT-P TOGGLEPERFORMANCEDISPLAY
+bind ALT-O TOGGLEPERFORMANCEVALUES
+bind CTRL-P RESETPERFORMANCEVALUES
+bind BUTTON2 TURNORACTION
+bind BUTTON1 CAMERAORSELECTORMOVE
+bind CTRL-BUTTON1 CAMERAORSELECTORMOVESTICKY
+</div>
+
+
+
+
+The default <a target="_blank" data-savepage-href="samples/bindings-cache.wtf" href="https://frostshock.github.io/wabc/samples/bindings-cache.wtf">"bindings-cache.wtf"</a> (found in <span style="background-color: #D0D0D0">"C:\WoW\WTF\Account\MyUser\bindings-cache.wtf"</span>) file looks like this:
+
+<div style="white-space: pre; background-color: #D8D8D8; width: 800px; padding: 10px 10px 10px 10px;">bind BUTTON3 MOVEANDSTEER
+bind W MOVEFORWARD
+bind UP MOVEFORWARD
+bind S MOVEBACKWARD
+bind DOWN MOVEBACKWARD
+bind A TURNLEFT
+bind LEFT TURNLEFT
+bind D TURNRIGHT
+bind RIGHT TURNRIGHT
+bind Q STRAFELEFT
+bind E STRAFERIGHT
+bind SPACE JUMP
+bind NUMPAD0 JUMP
+bind X SITORSTAND
+bind Z TOGGLESHEATH
+bind NUMLOCK TOGGLEAUTORUN
+bind BUTTON4 TOGGLEAUTORUN
+bind INSERT PITCHUP
+bind DELETE PITCHDOWN
+bind NUMPADDIVIDE TOGGLERUN
+bind ENTER OPENCHAT
+bind / OPENCHATSLASH
+bind PAGEUP CHATPAGEUP
+bind PAGEDOWN CHATPAGEDOWN
+bind SHIFT-PAGEDOWN CHATBOTTOM
+bind CTRL-PAGEUP COMBATLOGPAGEUP
+bind CTRL-PAGEDOWN COMBATLOGPAGEDOWN
+bind CTRL-SHIFT-PAGEDOWN COMBATLOGBOTTOM
+bind R REPLY
+bind SHIFT-R REPLY2
+bind 1 ACTIONBUTTON1
+bind 2 ACTIONBUTTON2
+bind 3 ACTIONBUTTON3
+bind 4 ACTIONBUTTON4
+bind 5 ACTIONBUTTON5
+bind 6 ACTIONBUTTON6
+bind 7 ACTIONBUTTON7
+bind 8 ACTIONBUTTON8
+bind 9 ACTIONBUTTON9
+bind 0 ACTIONBUTTON10
+bind - ACTIONBUTTON11
+bind = ACTIONBUTTON12
+bind ALT-1 SELFACTIONBUTTON1
+bind ALT-2 SELFACTIONBUTTON2
+bind ALT-3 SELFACTIONBUTTON3
+bind ALT-4 SELFACTIONBUTTON4
+bind ALT-5 SELFACTIONBUTTON5
+bind ALT-6 SELFACTIONBUTTON6
+bind ALT-7 SELFACTIONBUTTON7
+bind ALT-8 SELFACTIONBUTTON8
+bind ALT-9 SELFACTIONBUTTON9
+bind ALT-0 SELFACTIONBUTTON10
+bind ALT-- SELFACTIONBUTTON11
+bind ALT-= SELFACTIONBUTTON12
+bind CTRL-F1 SHAPESHIFTBUTTON1
+bind CTRL-F2 SHAPESHIFTBUTTON2
+bind CTRL-F3 SHAPESHIFTBUTTON3
+bind CTRL-F4 SHAPESHIFTBUTTON4
+bind CTRL-F5 SHAPESHIFTBUTTON5
+bind CTRL-F6 SHAPESHIFTBUTTON6
+bind CTRL-F7 SHAPESHIFTBUTTON7
+bind CTRL-F8 SHAPESHIFTBUTTON8
+bind CTRL-F9 SHAPESHIFTBUTTON9
+bind CTRL-F10 SHAPESHIFTBUTTON10
+bind CTRL-1 BONUSACTIONBUTTON1
+bind CTRL-2 BONUSACTIONBUTTON2
+bind CTRL-3 BONUSACTIONBUTTON3
+bind CTRL-4 BONUSACTIONBUTTON4
+bind CTRL-5 BONUSACTIONBUTTON5
+bind CTRL-6 BONUSACTIONBUTTON6
+bind CTRL-7 BONUSACTIONBUTTON7
+bind CTRL-8 BONUSACTIONBUTTON8
+bind CTRL-9 BONUSACTIONBUTTON9
+bind CTRL-0 BONUSACTIONBUTTON10
+bind SHIFT-1 ACTIONPAGE1
+bind SHIFT-2 ACTIONPAGE2
+bind SHIFT-3 ACTIONPAGE3
+bind SHIFT-4 ACTIONPAGE4
+bind SHIFT-5 ACTIONPAGE5
+bind SHIFT-6 ACTIONPAGE6
+bind SHIFT-UP PREVIOUSACTIONPAGE
+bind SHIFT-MOUSEWHEELUP PREVIOUSACTIONPAGE
+bind SHIFT-DOWN NEXTACTIONPAGE
+bind SHIFT-MOUSEWHEELDOWN NEXTACTIONPAGE
+bind TAB TARGETNEARESTENEMY
+bind SHIFT-TAB TARGETPREVIOUSENEMY
+bind CTRL-TAB TARGETNEARESTFRIEND
+bind CTRL-SHIFT-TAB TARGETPREVIOUSFRIEND
+bind F1 TARGETSELF
+bind SHIFT-F1 TARGETPET
+bind F2 TARGETPARTYMEMBER1
+bind F3 TARGETPARTYMEMBER2
+bind F4 TARGETPARTYMEMBER3
+bind F5 TARGETPARTYMEMBER4
+bind SHIFT-F2 TARGETPARTYPET1
+bind SHIFT-F3 TARGETPARTYPET2
+bind SHIFT-F4 TARGETPARTYPET3
+bind SHIFT-F5 TARGETPARTYPET4
+bind G TARGETLASTHOSTILE
+bind F ASSISTTARGET
+bind V NAMEPLATES
+bind SHIFT-V FRIENDNAMEPLATES
+bind CTRL-V ALLNAMEPLATES
+bind T ATTACKTARGET
+bind SHIFT-T PETATTACK
+bind C TOGGLECHARACTER0
+bind B TOGGLEBACKPACK
+bind F12 TOGGLEBACKPACK
+bind F8 TOGGLEBAG1
+bind F9 TOGGLEBAG2
+bind F10 TOGGLEBAG3
+bind F11 TOGGLEBAG4
+bind SHIFT-B OPENALLBAGS
+bind P TOGGLESPELLBOOK
+bind SHIFT-I TOGGLEPETBOOK
+bind SHIFT-P TOGGLECHARACTER3
+bind SHIFT-SPACE TOGGLEWORLDSTATESCORES
+bind SHIFT-M TOGGLEBATTLEFIELDMINIMAP
+bind H TOGGLECHARACTER4
+bind N TOGGLETALENTS
+bind U TOGGLECHARACTER2
+bind K TOGGLECHARACTER1
+bind O TOGGLESOCIAL
+bind L TOGGLEQUESTLOG
+bind SHIFT-C TOGGLECOMBATLOG
+bind ESCAPE TOGGLEGAMEMENU
+bind M TOGGLEWORLDMAP
+bind PRINTSCREEN SCREENSHOT
+bind NUMPADPLUS MINIMAPZOOMIN
+bind NUMPADMINUS MINIMAPZOOMOUT
+bind CTRL-M TOGGLEMUSIC
+bind CTRL-S TOGGLESOUND
+bind CTRL-= MASTERVOLUMEUP
+bind CTRL-- MASTERVOLUMEDOWN
+bind ALT-Z TOGGLEUI
+bind MOUSEWHEELUP CAMERAZOOMIN
+bind MOUSEWHEELDOWN CAMERAZOOMOUT
+bind END NEXTVIEW
+bind HOME PREVVIEW
+bind CTRL-R TOGGLEFPS
+bind CTRL-Y TOGGLESTATS
+bind CTRL-Q TOGGLETRIS
+bind CTRL-W TOGGLEPORTALS
+bind CTRL-E TOGGLECOLLISION
+bind CTRL-T TOGGLECOLLISIONDISPLAY
+bind ALT-B TOGGLEPLAYERBOUNDS
+bind ALT-P TOGGLEPERFORMANCEDISPLAY
+bind ALT-O TOGGLEPERFORMANCEVALUES
+bind CTRL-P RESETPERFORMANCEVALUES
+bind BUTTON2 TURNORACTION
+bind BUTTON1 CAMERAORSELECTORMOVE
+bind CTRL-BUTTON1 CAMERAORSELECTORMOVESTICKY
+</div>
+
+
+
+This list, as <a target="_top" data-savepage-href="hotkeys.html" href="https://frostshock.github.io/wabc/hotkeys.html">a separate html file</a>
+
+This list, as in an <a data-savepage-href="hotkeys.html" href="https://frostshock.github.io/wabc/hotkeys.html">alternative view</a> (hotkeys are not inside quotes)
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</body><sss-popup><template data-savepage-shadowroot=""><style>
+				:host {
+					all: initial !important;
+				}
+
+				.sss-content {
+					font-size: 0px !important;
+					direction: ltr !important;
+					position: absolute;
+					z-index: 2147483647;
+					user-select: none;
+					-moz-user-select: none;
+					box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+					background-color: #FFFFFF;
+					border-radius: 2px;
+					padding: 1px 3px;
+					text-align: center;
+					width: 140px;
+				}
+
+				.sss-content img {
+					width: 16px;
+					height: 16px;
+					padding: 3px 2px;
+					border-radius: 0px;
+					cursor: pointer;
+				}
+
+				.sss-content img:hover {
+					
+				}
+
+				.separator {
+					
+				pointer-events: none !important;
+				margin-left: -3.2px;
+				margin-right: -3.2px;
+			
+				}
+
+				.sss-engines {
+					text-align: center !important;
+				}
+
+				.sss-input-field {
+					box-sizing: border-box;
+					width: calc(100% - 8px);
+					border: 1px solid #ccc;
+					border-radius: 2px;
+					padding: 4px 7px;
+					margin: 4px 0px 2px 0px;
+				}
+
+				.sss-input-field:hover {
+					border: 1px solid #3399FF;
+				}
+
+				
+			</style><div class="sss-content" style="display: none; left: 835px; top: 1126px;"><div class="sss-engines"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABZVBMVEUAAACGhoapqamQkJCoqKjp6uqtra10dHRhYWEPDw8AAAAAAADFxcXk5OS5ubnc3Nzn5+e5ubm0tLTJycmenp69vb2ampqenp6pqamqqqqRkZGYmJiVlZWKiop0dHSBgYFZWVlGRkYeHh7////3+PjV1tbz8/Pn5+fa2dn5+fnW2dnR0tL1///5+vr09vb19fX48/L07+/V0dHKzc3Ly8v7///7/Pz0/Pz7+/rb29vY2NjP1tbK1NT20M3LysrYfHz/e1v/XDr/UzjUMTH/NCn/Kx/jDAzcBwfw///49vbm8vLY8fHP8PDk5OTT4+Pn4uLe3t7M3d342dba1dX31NHRy8vNycnNxMTSwcH7yb39wrT7t6z7tKn3ransqqn5q6P8saH4pJ7cnJz9ppPQjo7aiIjQhYXlfX7geXn6e3b+jXHWbGz2X174RUTrPD3/RC//PSnoISH6IiD6HRnwGBnqEBDyAQFLKnodAAAAI3RSTlMAf3+Mi/6Qa0cXDwf99+rn5OTAtK2qoIuAf3dzbWRIRj4sG99M9EAAAADnSURBVBjTLcjlYsIwGIXhb3TAgLm7NWmqtLRFxnCdu7v7cLh+EuD9dc4DsOyYc7BmFzzAWhnle6EJHwMXHwkFb1KpH4lHiwz6I1LwKX39mt4O8SMeBpJmZO7U24yhIcnFAIXPKifqY9lAuja0RkEPx/Nx9TkX8AsCmqIg+AO57637PAPduQQzhOw81P/+a4dOQsj+PHAborj72So1Tuk4GvcCF43KcvXrpWnKWLRXAThsHiQL8nvBxBhPAwVl86r4u5csnit4eL0LH9nL47fshZJwA21gzLZiVsKK2YOTPuhIXy+3l902/b0p5phtbDkAAAAASUVORK5CYII=" tabindex="0" title="Яндекс"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAt1BMVEUAAAD9/f39/f3////////9/f39/f39/f39/f39/f39/f3+/v79/f3///9ChfQ0qFPqQzU5qlfrSDr7vQf4/Pr++fn61NBYuHHuYVV4qPfO6tb+7Lac1avuZ1vo8P7Y5v3D2PyNtfiCrvhnnfZGh/Tp9ez96uj84+HM6dSn2bT2rKWR0KL1qaJKo5n0nZb0nJX7z5JYr46w0Y3N1oldunbwdmz2pGtIqkvsUjf8yTXxxCztvBH5sgoR9WrVAAAADXRSTlMA+pkJMNvYlsKdlC6/TdS9HQAAAKdJREFUGNNlz0cSgzAMBVDbmJ5PbyGQ3nvv9z9XjEnY5K0kjTTzRSqcqZSqjJOaYuKLKbI3EC/LICjXMYxqYmKaedIFYOIeceYFuyTZZjMAnDDs70GCH52oeLyvaGiEIgw7AJxKG/R/oOL5OkIaOgNxwnC6+TmE3tjpwyIcUer6q3lebJwRYBOxMkld6dCFXkePFmffT4sIrfoZ1qQSvcR1jVLNsqv6A+XrDwy18YgcAAAAAElFTkSuQmCC" tabindex="0" title="Google"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACCUlEQVR42mNgoAd4pOKmAsQe5GrmAOJFQLyTaE2PNTzMn6q6+wI1uQPxVCD+/1DF/fVjFVcjnJo4H5QwMvxfywRifxBxyQRpgmr8/1LZ/v8bZZv/91S8DgMNcQKKi/xXCWNEMYDtYjor6/nUfIabaTn/GeSZvwm7bHwMMeTvRc2w5Zc0Q1eCDLmv4vkXKLbkqYq7KIoBLEdjGVlPJ09jOZv8n+FL+uztPn49b2Rdvr1RsXni5n5tsqrfr2U/lQ0OfFMyOvVC2cHrj5w2G4Y3WM8kT2Y9BTTgWerdbR6+q7+LOr5/LeO5Qcv/+2GdgM8/Y1yOLdhplGHIsO8/s2TIfz50zeZAfJvxfMp/trPJu24oeM49b+a20qO7otTS9fd5K7+n/839Xn0z83910dLv+Skrv+cLkDXHAvEjIP4P8gLHqeQXrGeStjE8SLrOcCvuqm7y+UU27u+/W/k/+w/UCMJPgNgbYcDZ5AKg5rVA/ARkCAgznwPSp4HeueP/h+G142JL71errD3f/ocaUo81KqHeuAI15CvbmeTZYuuaZ0ks7ZlnGnV7o7UH3IAUnOkBqDEPakCV2plkJmft/522Tp9fWPm8BGn+DfXCSiBmx2WAIRB3spxNEgPxrbxerwUqvg/ECUBsCsR5QNwDxKK4DGACYrDpdi4fmYC2JgIVWyCrAdkOxExUyakAZ9kPm++ax2YAAAAASUVORK5CYII=" tabindex="0" title="RuTracer"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAllBMVEX+/v7+/v7+/v4AAAD+/v7+/v79/f3////6+voAAAC+vr6jo6P09PTV1dWPj4/g4ODLy8uurq6mpqaYmJiRkZFubm5UVFRKSkpISEhBQUE8PDwkJCT39/fb29vR0dHExMS4uLixsbGcnJyEhIR/f393d3d0dHRnZ2ddXV1XV1dMTExEREQ0NDQqKioeHh4WFhYSEhILCwsTDe6kAAAABnRSTlMqv7UA1NOKJIPZAAAAl0lEQVQY02WPVQ7DUAwEXdrJC5UxZWa4/+XaJEqVqiNZtudr12pW1Zfq57W6StTNKvqhYvLAE+RLMq87Hi6D8aG1H/qdy9ozGDzQdcQmZjYQJppuwdz5O4h9ZBKjCZxfEWFfykTLRfiuSScgE+J2pJec6IeFWLl2ELlegHIB9yRk8pwWQsRdaG9J7zw6pJNHt0ZZNOyv/hu++gqdhW9eugAAAABJRU5ErkJggg==" tabindex="0" title="Wikipedia"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAnFBMVEUAAACRDQjIEguUDQi7EQqeDgnAEQqZDgnIEgvEEQvIEguRDQiRDQiRDQiVDgjEEQuZDgjAEQq7EQq1EAqvEAqqDwmkDwnIEgueDgmRDQjy8vLn5+fd3d3V1dWsHBa2GhX5+fn37+/o6OjLyMjMv7/npaPbnZvTmpisjYzRY1+IU1HJMy2OMC2+HxijGxWdFxNvFBCBDAh0CgdcCAWdmXL9AAAADnRSTlMAzM6G6urMzKSHCdiiB9+U+TgAAAB6SURBVBjThcbJGoIgFAbQH3CuDG0yQG2e597/3eLC18KVZ3XQL0v44o/zBEjHHSmiguyvhRchKK37an0unQAT0iqlDq0rpqTRWm+OrpiRxhizu7liTh51fXpJV4SV9dxePrIiIWJp5d+39GKIvEMgGzK29AaMiRF6/QDvsQ79yfVKbgAAAABJRU5ErkJggg==" tabindex="0" title="YоuTube"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAA0lBMVEUAAABMiu/f3+B/f89lcbmSrN/Y2Nvf39/j4+Pg4ONPhupWjvDGyc5Ggux+iLjW1txXieFLi/VPjvVJivRSkPVRj/RNjPRHiPPk5OTc3Nzi4uLZ2dnX19jL2fHm5ubT09Vkm/Xg5vCCrfNrmube3t7Aw9FDVbaLnKaImaOEl6F5j5pclvWTt/OErvO/0vHY4fDU3vDF1fDn5+ejudyYsNxbjNqPptLNzc/Eyc20t8y6v8rBxsmprsa2v8Oxur9PYblMXLiXpbairrSUpq50iJZkf4o3MnexAAAAEXRSTlMA/bAI4NizsbCwoZyZlWVYPYy1BHEAAACtSURBVBjTXczXEoIwEIXh2HvJBkKQICode+9d3/+VDFFGx/9uvzmzqKKoItpESaoiUqH8BXlDKvMHkMsXiqV0uiGgY3anCtgWm7XbrIVUMHvQBwquwSRQ6MJgPKF4YT0ZkyAWwxHGy8D3o3sM4ofZwZheN7djvKBYRsgqCnWnhUhyE/sRct2RQGSp3SkwdFTT3hFNm/O9gE8Zzzu7hqFLkGUvW4v/Qv2wtjjn1RfdFBXs2jTIcQAAAABJRU5ErkJggg==" tabindex="0" title="Google Translate"><img src="moz-extension://634a357d-0a85-4b56-b9cb-c1aa03868bbc/res/sss-engine-icons/copy.png" tabindex="0" title="Copy to clipboard"></div></div></template></sss-popup></html>
