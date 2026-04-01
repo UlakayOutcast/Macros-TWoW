@@ -30,7 +30,7 @@ else
 			CastSpellByName("Ravage");C=200;
 		end;
 	end;
-end 
+end;
 
 
 
@@ -56,7 +56,7 @@ else
 			CastSpellByName("Ravage");C=200;
 		end;
 	end;
-end 
+end;
 
 
 Druid-=Shred+Ravage=-
@@ -79,4 +79,4 @@ else
 			CastSpellByName("Ravage");C=200;
 		end;
 	end;
-end 
+end;
